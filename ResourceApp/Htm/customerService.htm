@@ -1,0 +1,124 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<style>
+  .tab-content {
+    text-align: left;
+  }
+
+    .tab-content img {
+      border-radius: 25px;
+    }
+
+  .mui-bar {
+    height: 44px;
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+
+  .mui-segmented-control .mui-control-item {
+    line-height: 44px;
+  }
+</style>
+
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <h1 class="mui-title">客服</h1>
+</header>
+
+<div class="mui-bar mui-bar-header-secondary">
+  <div class="nav-tab">
+    <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+      <a class="mui-control-item mui-active" href="#customerService">
+        客服
+      </a>
+      <a class="mui-control-item" href="#friends">
+        好友
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div class="mui-content" id="content">
+  <div class="tab-content">
+    <div id="customerService" class="mui-control-content mui-active">
+      <ul class="mui-table-view mui-table-view-chevron" data-bind="foreach: serviceList">
+        <li class="mui-table-view-cell mui-media" data-bind="event: { tap: $parent.chat }">
+          <img class="mui-media-object mui-pull-left" data-bind="attr: { src: headImagePath }" />
+          <div class="mui-media-body">
+            <p><span class="zwjy-main">[客服]</span><span data-bind="text: theName"></span></p>
+            <!--<p class="mui-ellipsis"><span>你好，我想了解这个房子的详细信息</span></p>-->
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div id="friends" class="mui-control-content">
+      <ul class="mui-table-view mui-table-view-chevron" data-bind="foreach: friendsList">
+        <li class="mui-table-view-cell mui-media" data-bind="event: { tap: $parent.chat }">
+          <img class="mui-media-object mui-pull-left" data-bind="attr: { src: headImagePath }" />
+          <div class="mui-media-body">
+            <p><span class="zwjy-main" data-bind="text:typeName">[经纪人]</span><span data-bind="text: theName">Michael</span></p>
+            <!--<p class="mui-ellipsis"><span>你好，我想了解这个房子的详细信息</span></p>-->
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/customerService.js" type="text/javascript"></script>
+
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

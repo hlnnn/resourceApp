@@ -1,0 +1,387 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<!--<link href="../cssApp/houseFilter.css" rel="stylesheet" />-->
+<link href="../cssApp/houseList.css" rel="stylesheet" />
+<style>
+  h3 {
+    margin-top: 2rem;
+  }
+
+  .mui-bar-header-secondary .mui-icon {
+    font-size: 12px;
+  }
+
+  .dropdown-list {
+    top: 88px;
+    position: absolute;
+    width: 100%;
+    z-index: 999;
+    background-color: white;
+  }
+</style>
+
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <a class="mui-icon iconfont icon-map icon-map mui-pull-right" data-bind="visible: mapVisible,event: { tap : goMapList }"></a>
+  <h1 class="mui-title" data-bind="text: title"></h1>
+</header>
+
+<div id="filter-section" class="mui-bar mui-bar-header-secondary">
+  <div class="nav-tab">
+    <div class="mui-segmented-control mui-segmented-control-inverted">
+      <a class="mui-control-item" data-toggle="#dropdown-area">
+        <span data-bind="text:areaSelectVal"></span>
+        <i class="mui-icon iconfont icon-triangle"></i>
+      </a>
+      <!--ko if: sourceVisible-->
+      <a class="mui-control-item" data-toggle="#dropdown-source">
+        <span>来源</span>
+        <i class="mui-icon iconfont icon-triangle"></i>
+      </a>
+      <!--/ko-->
+      <!--ko if: timeVisible-->
+      <a class="mui-control-item" data-toggle="#dropdown-time">
+        <span>开盘时间</span>
+        <i class="mui-icon iconfont icon-triangle"></i>
+      </a>
+      <!--/ko-->
+      <a class="mui-control-item" data-toggle="#dropdown-price">
+        <span data-bind="text: priceTitle"></span>
+        <i class="mui-icon iconfont icon-triangle"></i>
+      </a>
+      <a class="mui-control-item" data-toggle="#dropdown-more">
+        <span>更多</span>
+        <i class="mui-icon iconfont icon-triangle"></i>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div id="filter-toggle-section">
+  <!-- 区域 -->
+  <div class="dropdown-list dropdown-checked mui-hidden" id="dropdown-area" data-bind="with: area">
+    <div class="mui-row">
+      <div class="mui-col-sm-3 mui-col-xs-3" data-bind="visible: areaVisible">
+        <ul class="mui-table-view mui-table-view-radio" data-bind="foreach: list">
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" data-bind="text: title, event: { tap: $parent.tap }"></a>
+          </li>
+        </ul>
+      </div>
+      <div class="mui-col-sm-4 mui-col-xs-4">
+        <ul class="mui-table-view mui-table-view-radio" data-bind="foreach: firsts">
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" data-bind="text: title, attr: { id: id }, event: { tap: $parent.firstTap }"></a>
+          </li>
+        </ul>
+      </div>
+      <div data-bind="css: areaCss">
+        <ul class="mui-table-view mui-table-view-radio" data-bind="foreach: seconds">
+          <li class="mui-table-view-cell">
+            <a class="mui-navigate-right" data-bind="text: title, attr:{ id: id }, event: { tap: $parent.secondTap }"></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 来源 -->
+  <!--ko if: sourceVisible-->
+  <div class="dropdown-list dropdown-checked mui-hidden dropdown-source" id="dropdown-source" data-bind="with: source">
+    <div class="mui-input-group">
+      <div class="mui-input-row mui-checkbox">
+        <input name="source" type="checkbox" data-bind="checked: all">
+        <label>全部</label>
+      </div>
+      <!-- ko foreach: list -->
+      <div class="mui-input-row mui-checkbox">
+        <input name="source" type="checkbox" data-bind="checkedValue: $data, checked: $parent.sourceSelecteds">
+        <label data-bind="text: $data"></label>
+      </div>
+      <!-- /ko -->
+    </div>
+    <div class="mui-row menuBottom mui-text-center btn-group">
+      <button type="button" class="mui-btn mui-btn-outlined" data-bind="event: { tap: function() { all(true); } }">重置</button>
+      <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined submit" data-bind="event: { tap: tap }">确定</button>
+    </div>
+  </div>
+  <!--/ko-->
+  <!--开盘时间-->
+  <!--ko if: timeVisible-->
+  <div class="dropdown-list dropdown-checked mui-hidden" id="dropdown-time" data-bind="with: time">
+    <div class="mui-input-group" data-bind="foreach: list">
+      <div class="mui-input-row mui-radio">
+        <input name="time" type="radio" data-bind="checkedValue: $index, checked: $parent.checkedVal">
+        <label data-bind="text: $data"></label>
+      </div>
+    </div>
+  </div>
+  <!--/ko-->
+  <!-- 价格 -->
+  <div class="dropdown-list dropdown-checked mui-hidden" id="dropdown-price" data-bind="with: price">
+    <div class="mui-input-group" data-bind="foreach: list">
+      <div class="mui-input-row mui-radio">
+        <input name="price" type="radio" data-bind="checkedValue: $data, checked: $parent.totalPrice">
+        <label data-bind="text: title"></label>
+      </div>
+    </div>
+    <div class="modify-price">
+      自定义价格
+      <input type="number" class="input-width" data-bind="textInput: lowerPrice" /> -
+      <input type="number" class="input-width" data-bind="textInput: upperPrice" /> <!--ko text: priceUnit--><!--/ko-->
+      <button class="mui-pull-right mui-btn btn-confirm" data-bind="event: { tap: tap }">确定</button>
+    </div>
+  </div>
+
+  <!-- 更多 -->
+  <div class="mui-row dropdown-list mui-hidden" id="dropdown-more" data-bind="with: more">
+    <!--户型-->
+    <div id="room" data-bind="with: room, visible: $parent.roomVisible">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block" data-bind="foreach: list">
+        <div class="mui-input-row mui-radio">
+          <input name="room" type="radio" data-bind="checkedValue: $index, checked: $parent.roomSelected">
+          <label data-bind="text: $data"></label>
+        </div>
+      </div>
+      <p>
+        自定义户型
+        <input type="number" class="input-width" data-bind="textInput: room" /> 室
+        <input type="number" class="input-width" data-bind="textInput: hall" /> 厅
+      </p>
+    </div>
+
+    <!-- 特色 -->
+    <div class="mui-input-row" data-bind="with: feature">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block">
+        <div class="mui-checkbox mui-left">
+          <input name="feature" type="checkbox" data-bind="checked: all">
+          <label>全部</label>
+        </div>
+        <!-- ko foreach: list -->
+        <div class="mui-checkbox mui-left group-block">
+          <input name="feature" type="checkbox" data-bind="checkedValue: $data, checked: $parent.featureSelecteds">
+          <label data-bind="text: $data"></label>
+        </div>
+        <!-- /ko -->
+      </div>
+    </div>
+
+    <!--面积-->
+    <div data-bind="with: square">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block" data-bind="foreach: list">
+        <div class="mui-input-row mui-radio">
+          <input name="square" type="radio" data-bind="checkedValue: $data, checked: $parent.totalSquare">
+          <label data-bind="text: title"></label>
+        </div>
+      </div>
+      <p>
+        自定义面积
+        <input type="number" class="input-width" data-bind="textInput: lowerSquare" /> -
+        <input type="number" class="input-width" data-bind="textInput: upperSquare" /> m²
+      </p>
+    </div>
+
+    <!--等级-->
+    <div data-bind="with: grade, visible: $parent.gradeVisible">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block" data-bind="foreach: list">
+        <div class="mui-input-row mui-radio">
+          <input name="grade" type="radio" data-bind="checkedValue: $data, checked: $parent.gradeSelected">
+          <label data-bind="text: $data"></label>
+        </div>
+      </div>
+    </div>
+
+    <!--适合经营-->
+    <div data-bind="with: management, visible: $parent.managementVisible">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block" data-bind="foreach: list">
+        <div class="mui-input-row mui-radio">
+          <input name="management" type="radio" data-bind="checkedValue: $data, checked: $parent.managementSelected">
+          <label data-bind="text: $data"></label>
+        </div>
+      </div>
+    </div>
+
+    <!--排序-->
+    <div data-bind="with: sort, visible: $parent.sortVisible">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block" data-bind="foreach: list">
+        <div class="mui-input-row mui-radio">
+          <input name="sort" type="radio" data-bind="checkedValue: $data, checked: $parent.sortSelected">
+          <label data-bind="text: $data"></label>
+        </div>
+      </div>
+    </div>
+
+    <!--类型-->
+    <div data-bind="with: rentType">
+      <h4 data-bind="text: title"></h4>
+      <div class="mui-input-group mui-row group-block" data-bind="foreach: list">
+        <div class="mui-input-row mui-radio">
+          <input name="rentType" type="radio" data-bind="checkedValue: $data, checked: $parent.rentWay">
+          <label data-bind="text: $data"></label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mui-row mui-text-center btn-group">
+      <button type="button" class="mui-btn mui-btn-outlined" data-bind="event:{ tap: reset }">重置</button>
+      <button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" data-bind="event: { tap: search }">确定</button>
+    </div>
+  </div>
+</div>
+
+<div class="mui-bar mui-bar-header-third" id="search-section">
+  <div class="mui-input-row mui-search">
+    <input type="search" class="mui-input-clear" placeholder="请输入关键字搜索" id="search" data-bind="textInput: keyWord, attr: { placeholder: keywordPlaceHolder}" />
+  </div>
+</div>
+
+<div class="mui-row bg-f6 mui-bar mui-bar-header-fourth" id="screening2">
+  <div class="mui-col-sm-6 mui-col-xs-6" data-bind="visible: countVisible">
+    共找到<span class="red" data-bind="text: totalCount"></span>个房源
+  </div>
+  <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center checked-i" data-bind="visible: realSupply">
+    <label>
+      <input value="100%真房源" data-bind="checked: isLandlordCer" type="checkbox">100%真房源
+      <i class="iconfont"></i>
+    </label>
+  </div>
+  <div class="mui-col-sm-3 mui-col-xs-3 mui-text-center checked-i" data-bind="visible: prospecting">
+    <label>
+      <input value="上门实勘" data-bind="checked: isSiteProspect" type="checkbox">上门实勘
+      <i class="iconfont"></i>
+    </label>
+  </div>
+</div>
+
+<!-- BodyFooter -->
+
+<nav id="nav-footer" style="display: none" class="mui-bar mui-bar-tab" data-bind="visible: footerVisible">
+  <a class="mui-tab-item" data-bind="event: { tap: goAgent }">
+    <span class="mui-icon iconfont icon-home-page"></span>
+    <span class="mui-tab-label">找经纪人</span>
+  </a>
+  <a class="mui-tab-item" href="javascript:;" data-bind="event: { tap: goPublishHouse }">
+    <span class="mui-icon iconfont icon-customer-service"></span>
+    <span class="mui-tab-label">发布房源</span>
+  </a>
+  <a class="mui-tab-item" href="javascript:;" data-bind="event: { tap: goMyHouse }">
+    <span class="mui-icon iconfont icon-my"></span>
+    <span class="mui-tab-label" data-bind="text: myText">我的二手房</span>
+  </a>
+</nav>
+
+<!-- Content -->
+
+<div id="house-list" class="mui-content mui-scroll-wrapper">
+  <div class="mui-scroll">
+    <ul class="mui-table-view" style="display: none" data-bind="foreach: houseList, visible: houseList().length">
+      <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;" data-bind="event: { tap: $parent.detail }">
+          <img class="mui-media-object mui-pull-left" data-bind="attr: { src: imagePath }" />
+          <div class="icon-real">
+            <!-- ko if: isSiteProspect -->
+            <img src="../images/ico_detail_live.png" />
+            <!-- /ko -->
+            <!-- ko if: !isSiteProspect && isLandlordCer -->
+            <img src="../images/ico_detail_100.png" />
+            <!-- /ko -->
+          </div>
+          <div class="mui-media-body">
+            <h4 class="mui-ellipsis title">
+              <span data-bind="text: theTitle"></span>
+              <!-- ko if: source === 'sourceZhiWu' -->
+              <img src="../images/mark_zhiwu.jpg" class="idtag" />
+              <!-- /ko -->
+              <!-- ko if: source === 'sourcePersonal' -->
+              <img src="../images/mark_geren.jpg" class="idtag" />
+              <!-- /ko -->
+              <!-- ko if: source === 'sourceBroker' -->
+              <img src="../images/mark_jjr.jpg" class="idtag" />
+              <!-- /ko -->
+            </h4>
+            <div class="subTitle">
+              <!-- ko ifnot: theFloor -->
+              <span data-bind="text: address" class="blue"></span>
+              <!-- /ko -->
+              <!-- ko if: theFloor -->
+              <span data-bind="text: squareDisplay"></span>
+              <span data-bind="text: houseTypeDisplay"></span>
+              <span data-bind="text: floorDisplay"></span>
+              <!-- /ko -->
+            </div>
+            <div class="features" data-bind="foreach: features">
+              <span data-bind="text: $data, style: { 'border-color': $root.color[$index()], 'color': $root.color[$index()] }"></span>
+            </div>
+            <p class="mui-pull-right">
+              <span class="unitPrice" data-bind="text: unitPriceDisplay"></span>
+              <span class="totalPrice" data-bind="text: totalPriceDisplay"></span>
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/modules/houseListResult.js"></script>
+<script src="../jsApp/modules/houseListFilter.js"></script>
+<script src="../jsApp/modules/houseList.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

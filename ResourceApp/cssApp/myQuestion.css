@@ -1,0 +1,144 @@
+body {
+  background: #f7f7f7;
+}
+
+.mui-content {
+  background: #f7f7f7;
+}
+
+.mui-table-view:after {
+  height: 0px;
+}
+
+.icon-questions {
+  color: #3bc1f3;
+}
+
+.icon-answer1 {
+  color: #fb5f5f;
+}
+
+/*搜索框*/
+
+.mui-bar input[type=search] {
+  height: 32px;
+  margin: 0px 0;
+}
+
+.searchMargin {
+  margin-top: 7px;
+  padding: 2px;
+}
+
+.mui-search input[type='search'] {
+  background-color: white;
+  border-radius: 1rem;
+  -moz-box-shadow: 1px 1px 4px #ABABAB;
+  -webkit-box-shadow: -1px 1px 4px #ABABAB;
+  box-shadow: 1px 1px 4px #ABABAB;
+}
+
+input[type=search] {
+  margin-bottom: 0px;
+}
+
+.mui-search:before {
+  margin-top: -10px;
+}
+
+.mui-input-row {
+  background: #f7f7f7;
+}
+
+/*设置nav-tab背景颜色*/
+
+.mui-segmented-control {
+  background-color: #fff;
+}
+
+.icon-problem {
+  font-size: 1.5rem;
+  color: #5762ed;
+}
+
+.icon-answer {
+  font-size: 1.5rem;
+  color: #ea3333;
+}
+
+.answerStyle {
+  height: 20px;
+  margin-bottom: 0.3;
+  margin-top: 0.5rem;
+}
+
+.answer {
+  color: #999999;
+  font-size: 0.65rem !important;
+}
+
+header a:nth-child(2) {
+  font-size: 0.7rem !important;
+  margin-top: 0.3rem;
+}
+
+.myQuestion i {
+  float: left;
+}
+
+.myQuestion h4 {
+  line-height: 1.2;;
+  font-weight: 400;
+  font-size: 0.75rem;
+  margin: -0.03rem 1rem;
+}
+
+.myQuestion .date {
+  /*margin-left:20%;*/
+  color: #d4d4d4;
+  font-size: 0.65rem;
+  float: right;
+}
+
+/*我的回答*/
+textarea {
+  font-size: 0.7rem;
+  border-radius: 0px;
+}
+
+/*回答右箭头*/
+
+.mui-navigate-right:after,
+.mui-push-left:after,
+.mui-push-right:after {
+  top: 70%;
+}
+
+.mui-table-view-cell:after {
+  height: 0px;
+}
+
+.mui-table-view-cell> a:not(.mui-btn) {
+  display: inline-block;
+  left: 93%;
+  top: -0.8rem;
+}
+
+.mui-bar {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.mui-bar-header-third {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.space {
+  margin-top: 0rem;
+}
+
+/*房产问答选项item的border-bottom*/
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+border-bottom: 2px solid #dddddd;
+}

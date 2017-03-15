@@ -1,0 +1,47 @@
+﻿#segmentedControl a {
+  font-size: 16px;
+}
+
+.listStyle img {
+  width: 2.5rem;
+  height: 3rem;
+  margin-top: 3%;
+}
+
+.listStyle p:nth-child(1) {
+  font-size: 0.9rem;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.listStyle p:nth-child(2) {
+  font-size: 0.66rem;
+  color: rgba(0, 0, 0, 0.9);
+  margin-top: 0.01rem;
+}
+
+.listStyle p:nth-child(3) {
+  font-size: 0.6rem;
+  color: #999;
+  margin-top: -0.1rem;
+}
+
+.redColor span {
+  color: #ea3333;
+}
+
+.mui-btn-danger,
+.mui-btn-negative,
+.mui-btn-red {
+  background: #ea3333;
+  border-radius: 8px;
+  padding: 0.2rem;
+  font-size: 0.7rem;
+}
+
+#control {
+  padding: 0px;
+}
+
+.mui-segmented-control .mui-control-item {
+  line-height: 44px;
+}

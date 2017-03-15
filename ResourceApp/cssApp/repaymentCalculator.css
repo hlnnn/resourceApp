@@ -1,0 +1,19 @@
+﻿.radio-group >label {
+  width: 30%;
+}
+
+.radio-group div {
+  width: 60%;
+}
+
+.radio-group div label {
+  width: 50%;
+  float: right;
+  text-align: left;
+  padding-left: 18px !important;
+}
+
+.radio-group input {
+  left: 0;
+  width: auto !important;
+}

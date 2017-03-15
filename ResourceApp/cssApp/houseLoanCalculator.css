@@ -1,0 +1,73 @@
+﻿body,.mui-content,.nav-tab div .mui-control-item {
+  background-color: #fff !important;
+}
+
+body,.mui-input-row input, .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before, .mui-input-row input, .mui-input-row  label {
+   font-size: 0.7rem;
+}
+
+.mui-segmented-control-negative.mui-segmented-control-inverted .mui-control-item.mui-active {
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    background: 0 0;
+}
+
+.nav-tab div .mui-control-item {
+  border-bottom: 2px solid #ddd !important;
+}
+
+.nav-tab .mui-segmented-control-negative .active {
+  border-bottom-color: #ea3333 !important;
+}
+
+.nav-tab .mui-segmented-control-negative .active,.mui-input-row input {
+  color: #ea3333 !important;
+}
+
+.mui-justify label~ul li input, .three-row label~ul li input,.mui-radio-justify label~ul li input {
+    line-height: 1.4rem;
+}
+
+.mui-input-row label + span {
+  line-height: inherit;
+}
+
+.mui-input-row>label {
+  width: 44%;
+}
+
+.mui-radio-justify>label,.mui-radio-justify label~ul li label {
+  width: auto;
+}
+
+.mui-radio-justify label~ul li label {
+  padding-right: 32px;
+}
+
+.mui-input-row span.unit + input {
+  width: 56% !important;
+  text-align: right !important;
+  padding-right: 2.5rem;
+}
+
+.mui-input-row a.mui-navigate-right+ input {
+  width: 56% !important;
+  text-align: right !important;
+  padding-right: 30px;
+}
+
+.btn-red,.btn-red:active,.btn-red:focus {
+  background-color: #ea3333;
+  color: #fff;
+  margin: 1.3rem 0 0;
+  border-radius: 0;
+  border: 0;
+  height: 55px;
+  top: 0 !important;
+}
+
+.mui-scroll {
+  max-height: 100%;
+  overflow: auto;
+  padding-bottom: 84px;
+}

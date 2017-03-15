@@ -1,0 +1,568 @@
+﻿.mui-content {
+  background: #fff;
+}
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+a {
+  color: #33a3ea;
+}
+
+.mui-bar-nav {
+  top: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.communityImgHeight {
+  height: 3.2rem;
+}
+
+.colorRed {
+  color: #ea3333 !important;
+}
+
+
+/*头部图片间距*/
+
+#header a:nth-child(2) {
+  margin-left: 0.1rem;
+}
+
+
+/*轮播高度*/
+
+.mui-slider {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carouselHeight {
+  height: 12.5rem;
+}
+
+.mui-slider-indicator .mui-indicator {
+  margin: 1px 4px;
+}
+
+#showIndex {
+  position: absolute;
+  bottom: 4px;
+  width: 100%;
+  padding-right: 1em;
+  text-align: right;
+  background: 0 0;
+  color: #ffffff;
+}
+
+#showIndex.span {
+  padding: 5px !important;
+}
+
+
+/*内容标题*/
+
+.content-title {
+  margin-top: 0.4rem;
+}
+
+.content-title span {
+  display: inline-block;
+  margin-left: 0.5rem;
+}
+
+.content-title1 {
+  color: #333333;
+  font-weight: 700;
+}
+
+.content-title2 {
+  font-size: 0.67rem;
+  color: #5d5d5d;
+  margin-top: 0.2rem;
+}
+
+.content-title2 p {
+  font-size: 0.67rem;
+  color: #5d5d5d;
+  margin-bottom: 0;
+}
+
+.content-title2> span {
+  margin-top: -0.8rem !important;
+}
+
+
+/*楼盘均价*/
+
+.property-price> span:first-child {
+  font-size: 0.8rem !important;
+  color: #8b8b8b;
+  margin-right: 0px;
+}
+
+.property-price> span:nth-child(2) {
+  font-size: 0.8rem;
+  color: #ea3333;
+  margin-left: 0px;
+}
+
+.content-title2 i {
+  font-size: 0.6rem !important;
+}
+
+.content-title1 img {
+  width: 1.15rem;
+  height: auto;
+}
+
+#day {
+  margin-left: 0;
+  margin-top: 0;
+}
+
+.content-title3 {
+  margin-left: 0.6rem;
+  margin-top: 0.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.features span {
+  border: solid 1px;
+  padding: 0.08rem;
+  font-size: 0.6rem;
+  /*height: 0.7rem;*/
+  line-height: 0.7rem;
+  margin-right: -0.5rem;
+}
+
+.features span:nth-child(1) {
+  margin-left: 0rem;
+}
+
+
+/*详情*/
+
+
+/*总价+面积+房型*/
+
+.noDetailBorderRight {
+  border-right: none !important;
+}
+
+.padding {
+  padding: 0.5rem 0px;
+}
+
+.padding-bottom {
+  padding-bottom: 1rem;
+}
+
+.detailBorderRight> div {
+  margin: 0.4rem auto 0.25rem;
+  text-align: center;
+  border-right: 1px solid #ededed;
+}
+
+.detailBorderRight span {
+  overflow: hidden;
+  color: #ea3333;
+  font-size: 1.1rem;
+}
+
+.detailBorderRight p {
+  color: #999;
+  font-size: 0.7rem;
+  margin: 0px;
+  margin-top: 0.4rem;
+}
+
+
+/*新房参与团购*/
+
+.new-house-purchase> .mui-content {
+  background: transparent !important;
+}
+
+.new-house-purchase> .mui-row {
+  margin: 0px;
+  margin-top: -0.9rem;
+}
+
+.new-house-purchase {
+  background: url('../images/new-house-purchase.png');
+  background-size: cover;
+  background-position: center;
+  height: 4rem;
+  margin: 0 10px;
+  border: 1px solid transparent;
+  margin-bottom: 0.8rem;
+}
+
+.new-house-purchase> div {
+  color: #ea3333;
+  font-size: 12px;
+  margin: 0.5rem;
+}
+
+.grouponDatetime {
+  display: inline-block;
+  margin-left: 40%;
+  margin-top: 0.6rem;
+}
+
+.new-house-purchase> div+ div> span {
+  margin-top: -0.5rem !important;
+  border: 1px solid red;
+}
+
+
+/*参考首付*/
+
+.detailFont div {
+  margin-top: 0.5rem;
+}
+
+.detailFont span:nth-child(1) {
+  color: #999;
+}
+
+.detailFont span:nth-child(2) {
+  font-weight: 600;
+  color: #333333;
+}
+
+detailBorderRight .floor span+ span {
+  margin-left: -7px !important;
+}
+
+
+/*地址*/
+
+.address {
+  padding: 0.5rem;
+  font-size: 0.65rem;
+  color: #33a3ea;
+}
+
+
+/*线border-top*/
+
+.smallSplitBlock {
+  border-top: .05rem solid #ededed;
+}
+
+.bigSplitBlock {
+  border-top: .25rem solid #f7f7f7;
+}
+
+
+/*房源描述*/
+
+.traffic {
+  font-size: 0.7rem;
+  color: #333333;
+  font-weight: 600;
+  line-height: 0.1rem;
+}
+
+.resource {
+  padding: 0.5rem;
+}
+
+.a {
+  max-width: 100px !important;
+  width: 100px !important;
+  height: 70px !important;
+}
+
+.resource a {
+  font-size: 0.55rem;
+}
+
+.resourceSpan {
+  padding: 0rem 0.4rem;
+  border-left: 2px solid #ea3333;
+  font-weight: 600;
+  color: #333333 !important;
+}
+
+.resourceContent {
+  text-indent: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: #333333;
+}
+
+.resourceContent p {
+  text-indent: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.7rem;
+  color: #333333;
+}
+
+.resourceContent span strong {
+  display: block;
+  text-indent: 1.5rem;
+  margin-top: 0.5rem;
+  font-size: 0.65rem !important;
+  color: #333333;
+  font-weight: 100;
+}
+
+.resourceDetail p {
+  color: #999;
+}
+
+.resourceDetail span {
+  color: #333333;
+  font-weight: 100 !important;
+}
+
+
+/*智屋热线*/
+
+.zwPhone {
+  height: 2.5rem;
+  color: #fff !important;
+  background: #ea3333;
+  line-height: 2.5rem;
+}
+
+.zwPhone> i,
+.zwPhone span {
+  font-size: 1rem;
+  color: #fff !important;
+}
+
+.phone {
+  margin-bottom: 50px;
+  padding: 10px;
+}
+
+.mui-bar-tab~ .mui-content {
+  padding-bottom: 0px;
+}
+
+
+/*举报该房源*/
+
+.report {
+  margin-top: -50px;
+}
+
+.report p {
+  color: #999;
+  font-size: 0.8rem;
+  height: 100px;
+  margin-top: 20px;
+}
+
+
+/*房屋详情*/
+
+.cellDetail span {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #333333 !important;
+}
+
+.cellDetail p {
+  margin-bottom: 0.2rem;
+}
+
+.resourceImg {
+  border: 1px solid red;
+}
+
+.cell {
+  color: #333333;
+  font-weight: 600;
+  font-size: 1.9rem !important;
+  font-size: 0.8rem !important;
+}
+
+
+/*楼层*/
+
+.house-detail span:nth-child(2) {
+  margin-left: -5px !important;
+}
+
+.house-detail {
+  padding-top: 0.5rem;
+}
+
+.house-detail ul:first-child {
+  padding-right: 0px;
+}
+
+.house-detail {
+  background: #ffffff;
+}
+
+.house-detail> ul {
+  padding: 1rem;
+  margin: 0;
+  padding-top: 0rem !important;
+  padding-left: 0.5rem;
+}
+
+.house-detail> ul> li+ li {
+  margin-top: 0rem;
+  line-height: 1.2rem !important;
+}
+
+.house-detail span {
+  font-size: 0.7rem !important;
+}
+
+.indrouction {
+  line-height: 1.5rem !important;
+}
+
+.house-detail> ul> li> span:first-child {
+  color: #999;
+}
+
+.house-detail> ul> li> span:last-child {
+  color: #333;
+}
+
+.house-detail> ul:first-child {
+  float: left;
+}
+
+.house-detail> ul:last-child {
+  float: right;
+  margin-top: -1rem;
+  margin-bottom: -0.6rem;
+}
+
+
+/*联系人*/
+
+.iconFont {
+  background: #939393;
+  color: #ffffff !important;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.iconfontLeft {
+  background: #50ca92;
+  width: 50%;
+  line-height: 2.5rem;
+  font-size: 1.7rem;
+  margin: 0 auto;
+}
+
+.iconfontLeft> a {
+  border: 1px solid red;
+  top: 50%;
+}
+
+.iconfontRight {
+  background: #4280e8;
+}
+
+.mui-media-body {
+  margin-bottom: 0px;
+}
+
+.contactPeople {
+  background: #949494;
+  line-height: 2.5rem;
+  height: 2.5rem;
+}
+
+.contactPeople span:first-child {
+  margin-left: -1.6rem;
+}
+
+.contactPeople span {
+  font-size: 0.8rem !important;
+}
+
+.contactPeople> img {
+  height: 2rem !important;
+  width: auto;
+  margin: 0.25rem 0.5rem;
+}
+
+.contact .mui-media-object.mui-pull-left {
+  margin-right: 0px !important;
+}
+
+
+/*立即申请*/
+
+.application {
+  background: #ea3333;
+  line-height: 1.5rem;
+  height: 2.5rem;
+}
+
+nav {
+  height: 0px !important;
+}
+
+
+/*.mui-table-view的最底部那一条线*/
+
+.mui-table-view:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: transparent;
+}
+
+.mui-table-view:before {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 1px;
+  content: '';
+  -webkit-transform: scaleY(.5);
+  transform: scaleY(.5);
+  background-color: transparent;
+  top: -1px;
+}
+
+.mui-backdrop {
+  position: fixed;
+  top: 48px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background-color: #fff;
+}
+
+.leftLine {
+  border-left: 2px solid #ea3333;
+  padding-left: 10px;
+  line-height: 10px;
+}
+
+.icon-real img {
+  width: 2.5rem;
+  height: auto;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  z-index: 2;
+}

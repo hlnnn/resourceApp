@@ -1,0 +1,111 @@
+﻿.statusbar {
+  /*background-color: #ea3333;*/
+  background: -ms-linear-gradient(90°, #ea3333, #fe4f4f); /* IE 10 */
+  background: -moz-linear-gradient(90°,#ea3333, #fe4f4f); /*火狐*/
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%,from(#ea3333), to(#fe4f4f)); /*谷歌*/
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ea3333), to(#fe4f4f)); /* Safari 4-5, Chrome 1-9*/
+  background: -webkit-linear-gradient(90°, #ea3333, #fe4f4f); /*Safari5.1 Chrome 10+*/
+  background: -o-linear-gradient(90°, #ea3333, #fe4f4f); /*Opera 11.10+*/
+  padding-top: 1.1rem;
+  padding-bottom: 1.5rem;
+}
+
+  .statusbar .headImagePath {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+  }
+
+.mui-h3 {
+  font-size: .75rem;
+  padding-top: .5rem;
+  color: #fff;
+}
+
+.mui-grid-view.mui-grid-9 {
+  margin-top: 1rem;
+  background-color: #fff;
+  border-color: #f2f2f2;
+}
+
+img.headImagePath {
+  height: 3.75rem;
+}
+
+.icon-Login {
+  font-size: 3.75rem;
+  color: #f67272;
+}
+
+.icon-my-order {
+  color: #ff94a5;
+}
+
+.icon-housing-resources {
+  color: #bbedf7;
+}
+
+.icon-information-box {
+  color: #a3abff;
+}
+
+.icon-collection {
+  color: #4fd0ac;
+}
+
+.icon-my-question {
+  color: #fdb686;
+}
+
+.icon-real-estate-ask {
+  color: #49e3e0;
+}
+
+.icon-QR-code {
+  color: #4a4a4a;
+}
+
+.icon-list {
+  color: #9b9b9b;
+}
+
+.mui-table-view.mui-grid-view .mui-table-view-cell .mui-media-body {
+  margin-top: 0.7rem;
+  margin-bottom: 0.2rem;
+}
+
+.forgerPasswordbutton {
+  margin-top: -0.6rem;
+}
+
+/*获取验证码*/
+#btnVerificationCode {
+  float: right;
+  border: 0;
+  background: transparent;
+  color: #ea3333;
+  border-left: 1px solid #666666;
+  border-radius: 0;
+  padding: 0px;
+  text-align: center;
+  padding: 0.05rem 0.3rem;
+  margin-top: 0.35rem;
+}
+
+/*信息箱角标*/
+.msgbox .mui-badge {
+  margin-top: -1.8rem;
+  background: #fc4e4d;
+  padding: 0.14rem 0.29rem;
+  font-size: 0.5rem;
+  color: #ffffff;
+  border-radius: 20px;
+}
+
+.mui-grid-view.mui-grid-9 {
+  margin-top: 0px;
+}
+
+.mui-content > .mui-table-view:first-child {
+  margin-top: 0px;
+}

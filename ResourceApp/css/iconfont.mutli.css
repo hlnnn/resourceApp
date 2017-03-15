@@ -1,0 +1,40 @@
+
+@font-face {font-family: "iconfont-mutli";
+  src: url('../fonts/mutli/iconfont.eot?t=1486522644586'); /* IE9*/
+  src: url('../fonts/mutli/iconfont.eot?t=1486522644586#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/mutli/iconfont.woff?t=1486522644586') format('woff'), /* chrome, firefox */
+  url('../fonts/mutli/iconfont.ttf?t=1486522644586') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/mutli/iconfont.svg?t=1486522644586#iconfont-mutli') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont-mutli {
+  font-family:"iconfont-mutli" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-transfer-agent:before { content: "\e6aa"; }
+
+.icon-professional:before { content: "\e6ac"; }
+
+.icon-loan-application:before { content: "\e6ad"; }
+
+.icon-commissioned-estimate:before { content: "\e6af"; }
+
+.icon-calculator:before { content: "\e6d0"; }
+
+.icon-designer:before { content: "\e6d2"; }
+
+.icon-house-inspection:before { content: "\e6d3"; }
+
+.icon-lawyer:before { content: "\e6d4"; }
+
+.icon-surveyor:before { content: "\e6d5"; }
+
+.icon-release-success:before { content: "\e6e9"; }
+
+.icon-agent:before { content: "\e6ee"; }
+
+.icon-no-data:before { content: "\e6f5"; }

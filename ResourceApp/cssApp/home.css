@@ -1,0 +1,395 @@
+﻿p {
+  color: #333;
+}
+
+.mui-card {
+  margin: 0;
+}
+
+.mui-card-header {
+  padding-left: .5rem;
+}
+
+  .mui-card-header a.header {
+    color: #333;
+    /*font-size: 0.8rem;*/
+  }
+
+
+/*header.mui-bar {
+  background-color: rgba(234,51,51,0);
+}*/
+
+header .mui-search input[type='search'] {
+  background-color: white;
+  border-radius: 1rem;
+}
+
+img {
+  width: 100%;
+}
+
+
+/*广告部分*/
+
+#ads-section {}
+
+#ads-section img {
+  height: 13.5rem;
+}
+
+  /*#ads-section img {
+    height: 12.5rem;
+  }*/
+
+.logo {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 999;
+  width: 6rem;
+}
+
+.logo  img {
+  height: 1.55rem !important;
+}
+
+/*城市部分*/
+
+#city-section {
+  width: 100%;
+  top: 0.5rem;
+  right: 0.5rem;
+  left: auto;
+  z-index: 1;
+}
+
+  #city-section button,
+  #city-section a {
+    border: 0px;
+    color: #fff;
+    border-radius: 1rem;
+    background: rgba(0,0,0,0.5)
+  }
+
+/*查询部分*/
+
+#search-section {
+  width: 100%;
+  top: 11rem;
+  padding: 0 0.8rem;
+  z-index: 1;
+}
+
+
+  /*查询框*/
+
+  #search-section input[type='search'] {
+    width: 100%;
+    background-color: white;
+    /*opacity: 0.8;*/
+  }
+
+  #search-section.header {
+    top: 0;
+    z-index: 10;
+    background-color: #ea3333;
+    padding-top: .5rem;
+  }
+
+    #search-section.header .mui-search {
+      width: 80%;
+      float: left;
+    }
+
+.search {
+  color: #999;
+}
+
+.mui-input-row .mui-icon-clear {
+  display: none;
+}
+
+
+/*查询框*/
+
+#search-section.header input[type='search'] {
+  opacity: 1;
+  border-radius: 1rem;
+  height: 1.5rem;
+}
+
+#search-section.header #city-switch {
+  color: white;
+  background-color: inherit;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+#service {
+  background-color: #fff;
+  /*padding-bottom: 0.8rem;*/
+}
+
+
+/*专业人士*/
+#professional {
+  background: #FFFFFF;
+  /*padding: 0.5rem 0 0 0;*/
+}
+
+  #professional svg {
+    margin-top: 0.5rem;
+    font-size: 1.7rem;
+  }
+
+  #professional p {
+    color: black;
+    margin-top: 0.2rem;
+    font-size: 0.65rem;
+  }
+
+.professionalContent {
+  background: #f7f7f7;
+  margin-top: -0.2rem;
+}
+
+
+/*房源部分*/
+
+#house-section {
+  background-color: white;
+}
+
+  #house-section ul {
+    padding: 0.5rem 0 0;
+  }
+
+  #house-section li {
+    width: 25%;
+    /*margin: 1%;*/
+    text-align: center;
+    padding: .2rem;
+  }
+
+    #house-section li i {
+      font-size: 2.75rem;
+    }
+
+    #house-section li p.title {
+      font-size: 0.6rem;
+      /*display: inline-block;*/
+      margin-top: 0.5rem;
+    }
+
+
+/*服务部分*/
+
+#service-section {
+  background-color: white;
+}
+
+  #service-section ul {
+    width: 100%;
+  }
+
+  #service-section li {
+    width: 50%;
+    text-align: center;
+    border-right: solid 1px #ddd;
+    border-bottom: solid 1px #ddd;
+    padding: .5rem .5rem 0 .5rem;
+  }
+
+    #service-section li.top {
+      border-top: solid 1px #ddd;
+    }
+
+    #service-section li.end {
+      border-right: none;
+    }
+
+    #service-section li i,
+    #service-section li svg {
+      font-size: 2.75rem;
+    }
+
+    #service-section li h4 {
+      font-size: 0.9rem;
+      font-weight: normal;
+    }
+
+    #service-section li p {
+      font-size: 0.6rem;
+    }
+
+
+/*资讯部分*/
+
+#news-section {
+  /*border-top: solid 0.3rem #ddd;*/
+}
+
+  #news-section .first img {
+    height: 12.5rem;
+  }
+
+  #news-section .first span {
+    opacity: 1;
+    display: inline-block;
+    color: white;
+  }
+
+  #news-section .first .bar {
+    background-color: red;
+    width: .3rem;
+    line-height: 1;
+    height: 0.9rem;
+  }
+
+  #news-section .first span.title {
+    width: 65%;
+  }
+
+  #news-section .first span.date {
+    width: 25%;
+  }
+
+  #news-section .list img {
+    line-height: 3.5rem;
+    height: 3.5rem;
+    width: 5rem;
+    max-width: 5rem;
+  }
+
+  #news-section .list p.date {
+    /*width: 4rem;*/
+    margin-top: 0.5rem;
+  }
+
+
+/*推荐部分*/
+
+#recommend-section {
+  border-top: solid 0.3rem #f7f7f7;
+}
+
+  #recommend-section li.mui-table-view-cell {
+    padding-bottom: 0.4rem;
+  }
+
+  #recommend-section span {
+    display: inline-block;
+  }
+
+  #recommend-section .bar {
+    background-color: red;
+    width: .3rem;
+    line-height: 1;
+    height: 0.9rem;
+  }
+
+  #recommend-section .list span {
+    /*margin-right: 0.2rem;*/
+    font-size: 0.6rem;
+    color: #666;
+  }
+
+  #recommend-section .title {
+    color: #333;
+  }
+
+  #recommend-section .subTitle span {
+    /*padding-right: 0.6rem;*/
+    color: #666;
+  }
+
+  #recommend-section .list img {
+    line-height: 3.5rem;
+    height: 3.5rem;
+    width: 5rem;
+    max-width: 5rem;
+    /*margin-top: 0.4rem;*/
+  }
+
+  #recommend-section .features span {
+    border: solid 1px;
+    padding: 0 0.05rem 0.05rem 0.05rem;
+    font-size: 0.5rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+  }
+
+  #recommend-section .list .totalPrice {
+    font-size: 1rem;
+    color: #ea3333;
+    margin: .3rem 0 0 0;
+  }
+
+  #recommend-section button.more-house {
+    color: #999;
+    margin: 1rem 15%;
+    width: 70%;
+    padding: 0.3rem;
+  }
+
+#nav-footer a {
+  color: #666;
+}
+
+#nav-footer a {
+  color: #666;
+  text-align: center;
+}
+
+  #nav-footer a.mui-active {
+    color: #ea3333;
+  }
+
+/*发布房源弹框*/
+.popoverContent {
+  background-color: #fff;
+  text-align: center;
+  height: 8.5rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  margin: 0 10px;
+  position: fixed;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 10px;
+}
+
+  .popoverContent .mui-table-view-cell:after {
+    height: 0;
+  }
+
+  .popoverContent > ul > li {
+    border-radius: 20px;
+  }
+
+    .popoverContent > ul > li i {
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .popoverContent > ul > li p {
+      color: black;
+    }
+
+  .popoverContent > h4 {
+    margin-top: 0.4rem;
+  }
+
+  .popoverContent > p {
+    margin-top: 0rem;
+  }
+
+/*.mui-table-view-cell:after {
+        height: 0;
+      }*/

@@ -1,0 +1,85 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/tick.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">估价目的</h1>
+</header>
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div class="mui-content">
+  <ul class="mui-table-view" data-bind="foreach: items">
+    <li class="mui-table-view-cell" data-bind="event: { tap: $parent.selected }">
+      <a data-bind="text: $data, css: { 'mui-navigate-right mui-navigate-checkmarkempty': $parent.selectedItem === $data }"></a>
+    </li>
+  </ul>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script type="text/javascript" src="../jsApp/modules/choice.js"></script>
+
+<script type="text/javascript">
+  function ViewModel(items) {
+    app.module.Choice.call(this, 'valuationPurpose', items);
+  }
+
+  app.plusReady(function () {
+    var items = ['二手房贷款', '消费贷款', '公证类估价','赠与类估价','涉外类估价','合资估价','其他贷款'];
+    var vm = new ViewModel(items);
+    ko.applyBindings(vm);
+  });
+</script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

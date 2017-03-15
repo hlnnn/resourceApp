@@ -1,0 +1,305 @@
+﻿/*
+  *这是单独为hello mui准备的个性化css，可以覆盖标准mui的css定义；
+  * 在实际项目开发时，建议为App单独写一个css文件，从而实现项目的自定义皮肤功能；
+  *
+  * */
+
+html {
+  font-size: 125%;
+}
+
+body {
+  font-family: '黑体', 'Helvetica Neue', Helvetica, sans-serif;
+  color: #333;
+  background: #f7f7f7;
+}
+
+ul,
+li,
+dd,
+dt,
+dl,
+div {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none inside;
+}
+
+.mui-content {
+  background: #fff;
+ /*background-color: #f7f7f7;*/
+}
+
+
+/*标题栏右边字体*/
+
+.nav-right {
+  color: #fff;
+  font-size: 14px;
+  line-height: 44px;
+  position: absolute;
+  right: 20px;
+  z-index: 999;
+}
+
+
+/*.mui-plus.mui-android header.mui-bar {
+  display: none;
+}
+
+.mui-plus.mui-android .mui-bar-nav ~ .mui-content {
+  padding: 0;
+}*/
+
+div.absolute {
+  position: absolute;
+}
+
+
+/*多色字体*/
+
+.icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+
+.iconfont {
+  font-family: iconfont;
+  font-size: 16px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  display: table;
+}
+
+.zwjy-main {
+  color: #ea3333;
+}
+
+.zwjy-bg-main {
+  background-color: #ea3333;
+}
+
+.zwjy-btn-main {
+  color: #fff;
+  border: 1px solid #ea3333;
+  background-color: #ea3333;
+}
+
+.mui-btn-outlined.zwjy-btn-main {
+  color: #ea3333;
+}
+
+
+/* agree */
+
+.mui-agree {
+  font-size: 14px;
+}
+
+.mui-agree.mui-checkbox input[type=checkbox] {
+  top: 7px;
+  padding: 0;
+}
+
+.mui-agree.mui-checkbox input[type=checkbox]:before {
+  font-size: 20px;
+}
+
+.mui-agree.mui-checkbox input[type=checkbox]:checked:before {
+  content: '\e441';
+  color: #ea3333;
+}
+
+
+/* mui-input-row extend */
+
+.mui-input-row label.split {
+  padding: 0 15px;
+  margin: 11px 0;
+  /*border-right: 1px solid #ddd;*/
+  width: 35%;
+}
+
+.mui-input-row label+ span {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 1.1;
+  float: right;
+  width: 20%;
+  padding: 11px 15px;
+}
+
+.mui-input-row span+ input,
+.mui-input-row span+ select,
+.mui-input-row span+ textarea {
+  width: 45%;
+}
+
+.mui-input-row span.unit {
+  width: auto;
+  padding-left: 0;
+  padding-right: 0;
+  position: absolute;
+  right: 10px;
+}
+
+.mui-input-row span.unit+ input,
+.mui-input-row span.unit+ select,
+.mui-input-row span.unit+ textarea {
+  width: 65%;
+}
+
+.mui-input-row label+ .mui-btn {
+  font-family: 'Helvetica Neue', Helvetica, sans-serif;
+  line-height: 1.1;
+  width: 20%;
+  padding: 11px 5px;
+  font-size: 0.55rem;
+  margin: 0;
+}
+
+.mui-input-row .mui-btn+ input[type='number'] {
+  width: 45%;
+}
+
+.mui-input-row label~ ul {
+  float: right;
+  padding-right: .5rem;
+}
+
+.mui-input-row label~ ul li {
+  float: left;
+  clear: none;
+}
+
+.mui-input-row label~ ul li input,
+.mui-input-row label~ ul li select,
+.mui-input-row label~ ul li textarea {
+  padding-left: 1rem;
+}
+
+.mui-justify label {
+  padding-right: 35px;
+  text-align: justify;
+}
+
+.mui-justify> label {
+  width: 60%;
+}
+
+.mui-justify label+ span {
+  width: 15%;
+}
+
+.mui-justify span+ input,
+.mui-justify span+ select,
+.mui-justify span+ textarea {
+  width: 25%;
+}
+
+.mui-justify .mui-btn+ input[type='number'] {
+  float: right;
+  width: 40%;
+}
+
+.mui-radio input[type='radio']:checked:before,
+.mui-checkbox input[type='checkbox']:checked:before {
+  color: #ea3333;
+}
+
+
+/* dl */
+
+dl.detail {
+  margin: 0 auto 0 auto;
+  text-align: left;
+  font-size: 0.7rem;
+  color: #666;
+}
+
+dl.detail dt {
+  display: inline-block;
+  width: 45%;
+  text-align: right;
+}
+
+dl.detail dd {
+  width: 50%;
+  display: inline-block;
+}
+
+.mui-bar-header-third {
+  top: 88px;
+  height: 44px;
+}
+
+.mui-bar-header-fourth {
+  top: 132px;
+  height: 33px;
+}
+
+.mui-bar-header-third~ .mui-content {
+  padding-top: 132px;
+}
+
+.mui-bar-header-fourth~ .mui-content {
+  padding-top: 165px;
+}
+
+.mui-bar-nav~ .mui-bar-header-secondary~ .mui-bar-header-third~ .mui-content .mui-pull-top-pocket {
+  top: 132px;
+}
+.mui-bar-nav~ .mui-bar-header-secondary~ .mui-bar-header-third~ .mui-bar-header-fourth~ .mui-content .mui-pull-top-pocket {
+  top: 165px;
+}
+
+.mui-bar~ .mui-bar-header-secondary~ .mui-backdrop {
+  top: 88px;
+}
+
+.mui-bar~ .mui-bar-header-secondary~ .mui-bar-header-third~ .mui-backdrop {
+  top: 132px;
+}
+
+.mui-bar~ .mui-bar-header-secondary~ .mui-bar-header-third~ .mui-bar-header-fourth~ .mui-backdrop {
+  top: 165px;
+}
+
+
+/*每个ul 后面的空格*/
+
+.table-view-cell-shadow {
+  border-bottom: 1px solid #ddd;
+  -webkit-box-shadow: 1px 10px 1px #f7f7f7;
+  -moz-box-shadow: 1px 10px 1px #f7f7f7;
+  box-shadow: 1px 10px 1px #f7f7f7;
+  margin-bottom: 10px;
+}
+
+.mui-content>.mui-table-view:first-child {
+  margin-top: 0px;
+}
+/*提交、下一步按钮*/
+.zwjy-summit {
+  width: 92%;
+  margin: 1.2rem auto;
+}
+
+/*弹框*/
+.mui-toast-message {
+  padding: 10px 20px;
+}

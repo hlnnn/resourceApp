@@ -1,0 +1,79 @@
+﻿.leftLine {
+  border-left: 2px solid #ea3333;
+  padding-left: 10px;
+  line-height: 15px;
+}
+
+.topLine {
+  border-top: 1px solid #ccc;
+  margin-top: 8px;
+}
+
+.itemTitle {
+  padding: 0 !important;
+}
+
+  .itemTitle > li:first-child, .itemTitle > li:last-child > p {
+    margin: 10px;
+  }
+
+.mui-icon {
+  font-size: 16px;
+}
+
+.mui-content > ul {
+  padding: 10px;
+}
+
+.tableItem, .tableItem > li {
+  font-size: 0.7rem;
+}
+
+  .tableItem + .tableItem {
+    border-top: .25rem solid #f7f7f7;
+  }
+
+  .tableItem > li > p {
+    color: #999999;
+    font-size: 0.55rem;
+  }
+
+    .tableItem > li > p > span {
+      color: #333;
+    }
+
+p {
+  margin-bottom: 0px;
+}
+
+h4 {
+  margin-bottom: 10px;
+  display: inline-block;
+}
+
+.mark {
+  width: 20px !important;
+  height: 10px;
+}
+
+.features span {
+  font-size: 0.55rem;
+  border: 1px solid;
+}
+
+  .features span + span {
+    margin-left: -0.1rem;
+  }
+
+.subTitle span {
+  font-size: 0.62rem;
+}
+
+.mui-table-view .mui-media-object {
+  max-width: 120px;
+  height: 75px;
+}
+
+.house div + div {
+  margin-top: -0.2rem;
+}

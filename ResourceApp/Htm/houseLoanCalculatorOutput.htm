@@ -1,0 +1,136 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/houseLoanCalculatorOutput.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <a class="mui-pull-right mui-btn-link nav-right" data-bind="event: { tap: goBankingFinance }">申请贷款</a>
+  <h1 class="mui-title">计算结果</h1>
+</header>
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div class="mui-content">
+  <div class="nav-tab">
+    <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+      <a class="mui-control-item mui-active" data-bind="event: { tap: function(){ typeTap('business') }}">
+        商业性贷款
+      </a>
+      <a class="mui-control-item" data-bind="event: { tap: function(){ typeTap('providentFund') }}">
+        公积金贷款
+      </a>
+      <a class="mui-control-item" data-bind="event: { tap: function(){ typeTap('sum') }}">
+        总计
+      </a>
+    </div>
+  </div>
+
+  <div class="tab-content">
+    <div class="mui-control-content mui-active">
+      <div class="mui-row chart-info">
+        <div class="mui-col-xs-4">
+
+        </div>
+        <div class="mui-col-xs-8 chart-data">
+          <h2 data-bind="text: monthOfBenxi"></h2>
+          <p class="blue">月还款额<span class="tip">(仅供参考)</span></p>
+          <p>
+            <span></span>房屋总价：<span data-bind="text: totalPrice"></span>元
+          </p>
+          <p>
+            <span></span>首期付款：<span data-bind="text: firstPay"></span>元
+          </p>
+          <p>
+            <span></span>贷款金额：<span data-bind="text: loan"></span>元
+          </p>
+        </div>
+      </div>
+      <ul class="mui-table-view result-list">
+        <li class="mui-table-view-cell">
+          支付利息
+          <span data-bind="text: interestOfBenxi"></span>
+        </li>
+        <li class="mui-table-view-cell">
+          还款总额
+          <span data-bind="text: totalOfBenxi"></span>
+        </li>
+        <li class="mui-table-view-cell">
+          印花税
+          <span data-bind="text: yinhuaTax"></span>
+        </li>
+        <li class="mui-table-view-cell">
+          契税
+          <span data-bind="text: qiTax"></span>
+        </li>
+        <li class="mui-table-view-cell">
+          营业费
+          <span data-bind="text: yingyeTax"></span>
+        </li>
+        <li class="mui-table-view-cell">
+          个人所得税
+          <span data-bind="text: incomeTax"></span>
+        </li>
+        <li class="mui-table-view-cell">
+          税费总计
+          <span data-bind="text: totalTax"></span>
+        </li>
+        <li class="mui-text-center tip">以上结果仅供参考</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/modules/houseLoanCalculatorOutput.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

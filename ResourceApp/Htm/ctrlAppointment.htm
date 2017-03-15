@@ -1,0 +1,104 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/tick.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">办证时间</h1>
+</header>
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div class="mui-content">
+  <ul class="mui-table-view" data-bind="foreach: items">
+    <li class="mui-table-view-cell" data-bind="event: { tap: $parent.selected }">
+      <a data-bind="css: { 'mui-navigate-right mui-navigate-checkmarkempty': $parent.selectedItem === timeString + ' ' + halfDay }">
+        <span data-bind="text: timeString">数据加载中...</span>
+        <span data-bind="text: halfDay"></span>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script type="text/javascript" src="../jsApp/modules/choice.js"></script>
+<script type="text/javascript">
+  app.plusReady(function () {
+    function ViewModel(items) {
+      app.module.Choice.call(this, 'appointment', items);
+    }
+
+    app.request.postAction('tdwr', 'OrderDateList', {}, function (response) {
+      var datas = (_.filter(response.dateList, function (el, key) {
+        return el.state === 0;
+      }));
+      var items = [];
+      _.each(datas, function (el) {
+        items.push({ timeString: el.timeString, halfDay: el.halfDays[0], tableId: el.tableId });
+        if (el.halfDays.length > 1) {
+          items.push({ timeString: el.timeString, halfDay: el.halfDays[1], tableId: el.tableId });
+        }
+      });
+
+      if (response.result === 'success') {
+        var vm = new ViewModel(items);
+        ko.applyBindings(vm);
+      } else {
+        app.messager.toast(datas.info);
+      }
+    });
+  });
+</script>
+
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

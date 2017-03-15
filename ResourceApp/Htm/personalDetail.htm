@@ -1,0 +1,145 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/personalDetail.css" rel="stylesheet" />
+
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title" data-bind="text: title"></h1>
+</header>
+
+<!-- BodyFooter -->
+
+<nav id="nav-footer" class="mui-bar mui-bar-tab">
+  <a class="mui-tab-item" data-bind="event: { tap: phone }">
+    <i class="mui-icon iconfont icon-phone"></i>
+    <span class="mui-tab-label">打电话</span>
+  </a>
+  <a class="mui-tab-item" data-bind="event: { tap: sendSms }">
+    <i class="mui-icon iconfont icon-information-box"></i>
+    <span class="mui-tab-label">发短信</span>
+  </a>
+  <a class="mui-tab-item" href="javascript:;" data-bind="event: { tap: message }">
+    <i class="mui-icon iconfont icon-mailbox"></i>
+    <span class="mui-tab-label">留言</span>
+  </a>
+</nav>
+
+<!-- Content -->
+
+<div class="mui-content">
+  <ul class="mui-table-view mui-table-view-chevron" style="margin-top:-10px">
+    <li class="mui-table-view-cell mui-media">
+      <img class="mui-media-object mui-pull-left" data-bind="attr: { src: headImagePath }">
+      <div class="mui-media-body">
+        <p class="memberName">姓名：<span data-bind="text: memberName"></span></p>
+        <p style="display: inline-block;">等级：</p>
+        <p class="star" data-bind="foreach: starLevelArray">
+          <span data-bind="css: icon"></span>
+        </p>
+        <p class="mui-ellipsis">电话：<span data-bind="text: phoneNumber"></span></p>
+      </div>
+    </li>
+  </ul>
+  <ul class="mui-table-view">
+    <li class="mui-table-view-cell" data-bind="visible: agentAttribute">
+      <p>所属公司：<span data-bind="text: company"></span></p>
+      <p>所属门店：<span data-bind="text: store"></span></p>
+      <p>联系地址：<span data-bind="text: address"></span></p>
+    </li>
+  </ul>
+  <ul class="mui-table-view" data-bind="visible: pageAttribute">
+    <li class="mui-table-view-cell">
+      <span class="resourceSpan">专长领域</span>
+      <p data-bind="text: areasOfSpecificity"></p>
+    </li>
+    <li class="mui-table-view-cell">
+      <span class="resourceSpan">执业证号</span>
+      <p data-bind="text: practisingCertificateNo"></p>
+    </li>
+    <li class="mui-table-view-cell">
+      <span class="resourceSpan">所获奖项</span>
+      <p data-bind="text: awards"></p>
+    </li>
+    <li class="mui-table-view-cell">
+      <span class="resourceSpan">联系地址</span>
+      <p data-bind="text: address"></p>
+    </li>
+  </ul>
+  <ul class="mui-table-view" data-bind="visible: agentAttribute">
+    <li class="mui-table-view-cell">
+      <span class="resourceSpan">个人简介</span>
+      <p data-bind="text: introduction"></p>
+    </li>
+    <li class="mui-table-view-cell">
+      <span class="resourceSpan">房源</span>
+      <div class="mui-row house">
+        <div class="mui-col-xs-6 mui-col-sm-6" data-bind="event: { tap: function(){ goList('saleHouse') }}">
+          <i class="iconfont icon-sale-house mui-col-sm-11 mui-col-xs-11"></i>
+          <span class="mui-col-sm-1 mui-col-xs-1"></span>
+          <p class="count" data-bind="text: saleHouseCount">1</p>
+          <p>二手房房源</p>
+        </div>
+        <div class="mui-col-xs-6 mui-col-sm-6" data-bind="event: { tap: function(){ goList('rentHouse') }}">
+          <i class="iconfont icon-rent-house"></i>
+          <p class="count" data-bind="text: rentHouseCount">2</p>
+          <p>出租房源</p>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/personalDetail.js" type="text/javascript"></script>
+
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

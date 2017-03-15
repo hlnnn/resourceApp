@@ -1,0 +1,39 @@
+﻿
+body ,.mui-content{
+  background: #f4f4f4;
+}
+/*保存*/
+.preservation {
+  color: #fff0f5;
+  line-height: 44px;
+   font-size: 0.7rem;
+}
+
+.mui-scroll-wrapper {
+  margin-top: 44px;
+  font-size: 0.8rem;
+}
+.marginTop {
+    margin-top: 20px;
+}
+
+.exit {
+  text-align: center;
+}
+
+input {
+  font-family: '黑体';
+  text-align: right;
+}
+
+.mui-input-row {
+  font-size: 16px;
+    font-family: 'Helvetica Neue',Helvetica,sans-serif;
+}
+
+#myPhoto{
+  float: right;
+  margin-top: 5px;
+  margin-right: 0.8rem;
+}
+

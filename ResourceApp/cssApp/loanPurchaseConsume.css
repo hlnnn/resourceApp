@@ -1,0 +1,86 @@
+﻿body,
+.mui-content {
+  background: #f7f7f7;
+}
+
+
+/*修改form内容样式*/
+
+form,
+input {
+  font-size: 0.7rem;
+}
+
+form>div {
+  height: 3rem;
+}
+
+.mui-input-row label.split~input,
+.mui-input-row label.split~select,
+.mui-input-row label.split~textarea {
+  width: 60%;
+}
+
+.mui-input-row label.split+span~input,
+.mui-input-row label.split+span~select,
+.mui-input-row label.split+span~textarea {
+  width: 40%;
+}
+
+.mui-bar .mui-btn-block {
+  background: #ea3333;
+  font-size: 0.9rem;
+  top: 6px;
+  margin-bottom: 0;
+  padding: 5px 0;
+  border-radius: 0;
+  height: 2.5rem;
+}
+
+.mui-bar .mui-btn {
+  position: static;
+}
+
+
+/*输入框图标*/
+/*textarea*/
+
+textarea {
+  height: 6rem;
+  font-size: 0.6rem;
+}
+
+.textareaHeight {
+  height: 6.5rem !important;
+}
+
+.textareaHeight>label {
+  height: 5rem;
+  line-height: 4rem;
+  margin-top: 1rem;
+}
+
+
+.mui-radio input[type='radio']:before,
+.mui-checkbox input[type='checkbox']:before {
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.input {
+  font-size: 0.8rem !important;
+  float: left;
+  color: #999999;
+  text-align: right;
+}
+
+/*验证码*/
+#btnVerificationCode {
+  margin-top: 0.6rem;
+  border: 0;
+  background: transparent;
+  color: #ea3333 ;
+  border-left: 1px solid #666666;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0;
+}

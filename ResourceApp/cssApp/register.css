@@ -1,0 +1,20 @@
+﻿.mui-input-group label {
+  width: 26%;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  text-align: left;
+}
+
+.mui-input-row label ~ input,
+.mui-input-row label ~ select,
+.mui-input-row label ~ textarea {
+  width: 74%;
+}
+/*阅读并同意*/
+
+.mui-agree label {
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
+  margin-left: -1.7rem;
+  margin-top: 0.1rem;
+}

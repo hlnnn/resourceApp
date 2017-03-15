@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link rel="stylesheet" href="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.css" />  
+<link href="../cssApp/houseMap.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<div class="mui-content">
+  <div id="allmap" style="width: 100%; height: 500px;"></div>
+
+  <div id="tools" class="position">
+    <div class="mui-pull-left">
+      <a href="javascript:;">
+        <i class="iconfont icon-gps"></i>定位
+      </a>
+    </div>
+    <div class="mui-pull-right">
+      <a href="javascript:;">
+        <!-- ko ifnot: editing -->
+        <i class="iconfont icon-circle"></i>画图
+        <!-- /ko -->
+        <!-- ko if: editing -->
+        <i class="iconfont icon-circle"></i>清空
+        <!-- /ko -->
+      </a>
+    </div>
+  </div>
+</div>
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="http://api.map.baidu.com/api?v=2.0&ak=7ghDmSmm8cVouS5Yk0Zdy3kN"></script>
+<script src="http://api.map.baidu.com/library/CityList/1.4/src/CityList_min.js"></script>
+<script src="http://api.map.baidu.com/library/DrawingManager/1.4/src/DrawingManager_min.js"></script>
+<script src="../js/location.js"></script>
+<script src="../js/zwjy.baiduMap.js"></script>
+<script src="../jsApp/modules/houseMapContent.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

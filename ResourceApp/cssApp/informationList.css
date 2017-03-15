@@ -1,0 +1,26 @@
+﻿.list-wrap >.mui-table-view:first-child {
+  margin: 0 0 1.1rem;
+}
+
+.list li {
+  padding: 0;
+}
+
+.list li:after {
+  left: 0;
+  background-color: #ddd;
+}
+
+.list li>a {
+  margin: 0 !important;
+  padding: 0.75rem 0.5rem !important;
+}
+
+.list img {
+  max-width: 5rem !important;
+  height: 3.35rem !important;
+}
+
+.list li div .title {
+  height: 2.23rem;
+}

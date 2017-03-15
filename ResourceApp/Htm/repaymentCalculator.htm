@@ -1,0 +1,158 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link rel="stylesheet" href="../css/mui.picker.css" />
+<link rel="stylesheet" href="../css/mui.poppicker.css" />
+<link href="../cssApp/houseLoanCalculator.css" rel="stylesheet" />
+<link href="../cssApp/repaymentCalculator.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">房贷计算器</h1>
+</header>
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div class="mui-content mui-scroll-wrapper">
+  <div class="nav-tab">
+    <div class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+      <a class="mui-control-item" data-bind="event: { tap: houseLoanCalculator }">
+        房贷计算器
+      </a>
+      <a class="mui-control-item active">
+        提前还款计算器
+      </a>
+    </div>
+  </div>
+  <div class="mui-scroll">
+    <form class="mui-input-group panel">
+      <div class="mui-input-row mui-radio-justify">
+        <label>贷款类型</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>商业贷款</label>
+            <input name="loanType" type="radio" value="business" data-bind="checked: selectType" />
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>公积金贷款</label>
+            <input name="loanType" type="radio" value="providentFund" data-bind="checked: selectType" />
+          </li>
+        </ul>
+      </div>
+      <div class="mui-input-row">
+        <label>贷款总额</label>
+        <span class="unit zwjy-main">万</span>
+        <input type="number" placeholder="请输入贷款总额" data-bind="textInput: totalLoan">
+      </div>
+      <div class="mui-input-row" data-bind="event: { tap: repaymentPeriodTap }">
+        <label>原还款期限</label>
+        <a href="javascript:;" class="mui-navigate-right"></a>
+        <input type="text" readonly="readonly" data-bind="value: theYearCn">
+      </div>
+      <div class="mui-input-row" data-bind="event: { tap: rateTimeTap }">
+        <label>贷款利率</label>
+        <a href="javascript:;" class="mui-navigate-right"></a>
+        <input type="text" readonly="readonly" data-bind="value: rateTime">
+      </div>
+      <div class="mui-input-row">
+        <label>当时利率</label>
+        <span class="unit zwjy-main">%</span>
+        <input type="text" placeholder="请输入利率" data-bind="value: rate" />
+      </div>
+      <div class="mui-input-row" data-bind="event: { tap: firstYearTap }">
+        <label>第一次还款时间</label>
+        <a href="javascript:;" class="mui-navigate-right"></a>
+        <input type="text" readonly="readonly" data-bind="value: firstPay">
+      </div>
+      <div class="mui-input-row" data-bind="event: { tap: predictYearTap }">
+        <label>预计提前还款时间</label>
+        <a href="javascript:;" class="mui-navigate-right"></a>
+        <input type="text" readonly="readonly" data-bind="value: predictPay">
+      </div>
+
+      <div class="mui-input-row mui-radio-justify">
+        <label>提前还款方式</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>一次性还清</label>
+            <input name="preWay" type="radio" value="1" data-bind="checked: loanType" />
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>部分还清</label>
+            <input name="preWay" type="radio" value="0" data-bind="checked: loanType" />
+          </li>
+        </ul>
+      </div>
+      <div class="mui-input-row mui-radio-justify">
+        <label>处理方式</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>缩短还款期限</label>
+            <input name="theWay" type="radio" value="1" data-bind="checked: handleType" />
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>减少月还款</label>
+            <input name="theWay" type="radio" value="0" data-bind="checked: handleType" />
+          </li>
+        </ul>
+      </div>
+    </form>
+    <button class="mui-btn mui-btn-block zwjy-btn-main zwjy-summit" data-bind="event:{ tap: calculatorResult }">开始计算</button>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../js/mui.picker.js"></script>
+<script src="../js/mui.poppicker.js"></script>
+<script src="../jsApp/modules/repaymentCalculator.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/myHouseLists.css" rel="stylesheet" />
+<link href="../cssApp/houseList.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<div id="house-list" class="mui-content mui-scroll-wrapper">
+  <div class="mui-scroll">
+    <ul class="mui-table-view" style="display: none" data-bind="foreach: houseList, visible: houseList().length">
+      <!-- ko if: isSale -->
+      <li class="mui-table-view-cell state">
+        <div class="mui-row">
+          <div class="mui-col-xs-6 state">
+            <i class="iconfont" data-bind="css: stateIcon, style: { color: stateColor }"></i>
+            <span data-bind="text:stateCn"></span>
+          </div>
+          <div class="mui-col-xs-6 button" style="padding-left: 3.4rem">
+            <button type="button" class="mui-btn mui-btn-danger zwjy-btn-main" data-bind="event: { tap: $parent.edit }">编辑</button>
+            <button type="button" class="mui-btn" data-bind="event: { tap: $parent.delete }">删除</button>
+          </div>
+        </div>
+      </li>
+      <li class="mui-table-view-cell salehouseList">
+        <img class="mui-media-object mui-pull-left " data-bind="attr:{ src: imagePath }" style="width: 5rem;"/>
+        <div class="houseListTextcontent">
+          <h5 class="mui-ellipsis">
+            <span data-bind="text:areaName"></span>
+            <span data-bind="text:communityName"></span>
+            <span data-bind="text:houseTypeDisplay"></span>
+            <img src="../images/mark_jjr.jpg"/>
+          </h5>
+          <div class="subTitle">
+            <span data-bind="text:squareDisplay"></span>
+            <span data-bind="text: address" class="blue"></span>
+            <span data-bind="text:floorDisplay"></span>
+          </div>
+          <div class="features" data-bind="foreach: features">
+            <span data-bind="text: $data, style: { 'border-color': $root.color[$index()], 'color': $root.color[$index()] }"></span>
+          </div>
+          <p class="mui-pull-right">
+            <span class="unitPrice" data-bind="text: unitPriceDisplay"></span>
+            <span class="totalPrice" data-bind="text: totalPriceDisplay"></span>
+          </p>
+        </div>
+      </li>
+      <li>
+        <div class="space"></div>
+      </li>
+      <!-- /ko -->
+      <!-- ko ifnot: isSale -->
+      <li class="mui-table-view-cell state">
+        <div class="mui-row">
+          <div class="mui-col-xs-6 state">
+            <i class="iconfont icon-audit iconfontColor"></i>
+            <span>驳回申请</span>
+          </div>
+          <div class="mui-col-xs-6 button" style="padding-left: 3.4rem">
+            <button type="button" class="mui-btn mui-btn-danger zwjy-btn-main" data-bind="event: { tap: $parent.edit }">编辑</button>
+            <button type="button" class="mui-btn">删除</button>
+          </div>
+        </div>
+      </li>
+      <li class="mui-table-view-cell wantByHouseList">
+        <span data-bind="text: areaName"></span>
+        <span data-bind="text: communityName"></span>
+        <span data-bind="text: houseTypeDisplay"></span>
+        <span data-bind="text: totalPriceDisplay" class="mui-pull-right zwjy-main"></span>
+      </li>
+      <!-- /ko -->
+    </ul>
+  </div>
+</div>
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/modules/houseListContent.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

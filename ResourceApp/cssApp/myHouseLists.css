@@ -1,0 +1,233 @@
+﻿.icon-release-inventory {
+  font-size: 0.9rem !important;
+  margin-top: 0.1rem;
+}
+
+#filter-section {
+  padding: 0;
+}
+
+.nav-tab,
+.nav-tab a {
+  height: 42px;
+}
+
+.nav-tab {
+  padding-top: 0.1rem;
+}
+
+
+/*出租出售*/
+
+.imagePath {
+  width: 5rem;
+}
+
+.state {
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 38px;
+}
+
+  .state i {
+    font-size: 1rem;
+  }
+
+.mui-table-view-cell {
+  padding: 8px 15px;
+}
+
+.button {
+  text-align: right;
+  border: 1px solid transparent;
+  padding: 0.25rem;
+}
+
+  .button button {
+    font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.35rem;
+    border: 0;
+  }
+
+    .button button:nth-child(2) {
+      margin-right: 0.5rem;
+      margin-left: 1.5rem;
+      color: #fff !important;
+      background: #cccccc;
+    }
+
+
+/*.button {
+  padding-left: 2.6rem !important;}
+
+
+.button button {
+  padding: 0.1rem 0.6rem !important;
+  border-radius: 0.25rem;
+  border: 0 !important;
+  font-size: 0.6rem;
+}
+
+.button button:nth-child(2) {
+  color: #fff !important;
+  background: #cccccc;
+}*/
+
+.mui-table-view .mui-media-object {
+  max-width: 120px;
+  height: 80px;
+}
+
+.features span {
+  font-size: 0.55rem;
+  border: 1px solid burlywood;
+}
+
+  .features span + span {
+    margin-left: -0.1rem;
+  }
+
+.addressColor {
+  color: #33a5eb;
+}
+
+h5 img {
+  width: 1.5rem;
+}
+
+h5 {
+  color: black;
+  margin-top: 0px;
+}
+
+.subTitle span {
+  font-size: 0.62rem;
+}
+
+.houseListTextcontent div {
+  margin-top: -0.3rem;
+}
+
+.houseListTextcontent p {
+  margin-top: 0.2rem;
+}
+
+.totalPrice {
+  font-size: 0.85rem;
+}
+
+
+/*求租求购*/
+
+.wantByHouseList span {
+  font-size: 0.8rem;
+}
+
+
+/*我的收藏*/
+
+.mui-slider-group ul {
+  border-bottom: 1px solid #dddddd;
+}
+
+#sider-scroll > .mui-scroll {
+  padding-top: 0.1rem;
+}
+
+  #sider-scroll > .mui-scroll a {
+    height: 35px;
+  }
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item.mui-active {
+  color: #ea3333;
+  border-bottom: 2px solid #ea3333 !important;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-progress-bar {
+  background-color: #ea3333;
+}
+
+.mui-slider .mui-segmented-control.mui-segmented-control-inverted ~ .mui-slider-group .mui-slider-item {
+  border-top: 1px solid #F7F7F7;
+  border-bottom: 0px;
+  margin-top: -2px;
+}
+
+.mark {
+  width: 20px !important;
+  height: 10px;
+}
+
+
+/*我的房源*/
+
+.houseDetail {
+  padding: 0.75rem;
+  margin-bottom: 1.4rem;
+}
+
+/*.mui-table-view-cell:after {
+  height: 0px;
+}*/
+
+.mui-table-view-cell:nth-of-type(3n-2):after {
+  height: 1px;
+}
+
+/*.mui-table-view:after {
+  height: 0px;
+}*/
+
+.edit {
+  /*margin-bottom: 0.7rem;*/
+  border-bottom: 1px solid #dddddd;
+  /*padding-bottom: 0.4rem;*/
+}
+
+
+/*发布房源弹框*/
+
+.mui-backdrop-top {
+  top: 0 !important;
+  z-index: 1001 !important;
+}
+
+.popoverContent {
+  background-color: #fff;
+  text-align: center;
+  height: 8rem;
+  border-radius: 15px;
+  font-size: 0.7rem;
+  margin: 0 10px;
+  position: fixed;
+  top: 40%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1002;
+  padding: 10px;
+}
+
+  .popoverContent > ul > li {
+    border-radius: 20px;
+    margin-top: -0.2rem;
+  }
+
+    .popoverContent > ul > li i {
+      font-size: 1.8rem;
+      margin-top: 0.4rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .popoverContent > ul > li p {
+      color: black;
+    }
+
+  .popoverContent > h4 {
+    margin-top: 0.4rem;
+  }
+
+  .popoverContent > p {
+    margin-top: 0rem;
+  }

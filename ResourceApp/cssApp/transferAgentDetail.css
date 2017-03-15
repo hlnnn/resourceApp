@@ -1,0 +1,69 @@
+﻿.mui-content {
+  text-align: center;
+}
+
+button {
+  width: 7.5rem;
+  height: 2rem;
+  color: #fff !important;
+  font-size: 1rem;
+}
+
+.check {
+  background: #7dcbf2;
+}
+
+.confirm {
+  background: #f28a88;
+}
+
+svg.success {
+  width: 8.5em !important;
+  height: 8.5em !important;
+}
+
+.content p:nth-child(1) {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.content p:nth-child(2) {
+  font-size: 0.8rem;
+}
+
+.button {
+  margin-top: 2.5rem;
+  font-size: 1.2rem;
+}
+
+svg.transferAgent {
+  width: 5rem !important;
+  height: 5rem !important;
+  margin-top: 0.8rem;
+}
+
+.content>p {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 0.5rem;
+  margin-bottom: 1.6rem;
+}
+
+button {
+  margin-top: 1rem;
+  width: 6rem;
+  height: 1.8rem;
+}
+
+.mui-btn-danger,
+.mui-btn-negative,
+.mui-btn-red {
+  color: #fff;
+  border: 0;
+  background-color: #f28a88;
+}
+.contentTitle{
+  font-size: 1.2rem;
+  margin:0.5rem 0 1.8rem;
+  color: black;
+}

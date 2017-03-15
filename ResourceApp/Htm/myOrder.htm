@@ -1,0 +1,120 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/myOrder.css" rel="stylesheet" />
+<style>
+  .mui-table-view-cell:after {
+    left: 0px;
+    height: 0px;
+    -webkit-transform: scaleY(0);
+  }
+</style>
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">我的订单</h1>
+</header>
+<div class="mui-bar mui-bar-header-secondary">
+  <div class="nav-tab">
+    <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-negative">
+      <a class="mui-control-item mui-active" data-bind="event: { tap: allType }">全部</a>
+      <a class="mui-control-item" data-bind="text: orderType, event: { tap: choiceOrderType }">类型</a>
+    </div>
+  </div>
+</div>
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+  <div id="refreshContainer-scroll" class="mui-scroll">
+    <ul class="mui-table-view" style="display: none;" data-bind="foreach: results, visible: results().length">
+      <li class="mui-table-view-cell table-view-cell-shadow">
+        <div class="mui-row edit">
+          <div class="mui-col-xs-6 state">
+            <i class="iconfont" data-bind="css: stateIcon, style: { color: stateColor }"></i>
+            <span data-bind="text: stateCn">已申请</span>
+          </div>
+          <div class="mui-col-xs-6 button">
+           <!-- <button type="button" class="mui-btn zwjy-btn-main" data-bind="event: { tap: $parent.evaluation }">评价</button>-->
+            <button type="button" class="mui-btn zwjy-btn-main" data-bind="event: { tap: $parent.remove }">删除</button>
+          </div>
+        </div>
+
+        <div class="mui-row orderDetail" data-bind="event: { tap: $parent.detail }">
+          <div class="mui-col-xs-4 type" style="text-align: center;">
+            <svg class="icon" aria-hidden="true">
+              <use xlink:href="#" data-bind="attr: { 'xlink:href': orderTypeCss }"></use>
+            </svg>
+            <div data-bind="text: orderTypeCn"></div>
+          </div>
+          <div class="mui-col-xs-8 typeContent">
+            <p>地区：<span data-bind="text: address"></span></p>
+            <p>联系人：<span data-bind="text: contactName"></span></p>
+            <p>预约时间：<span data-bind="text: orderTime"></span></p>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div id="order-type" class="order-type">
+  <ul class="mui-table-view">
+    <li class="mui-table-view-cell" data-bind="event: { tap: transferAgent }"><a href="#">代办过户</a></li>
+    <li class="mui-table-view-cell" data-bind="event: { tap: commissionedEstimate }"><a href="#">委托估价</a></li>
+  </ul>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/myOrder.js" type="text/javascript"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

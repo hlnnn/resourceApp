@@ -1,0 +1,26 @@
+﻿body {
+  background: #f7f7f7;
+}
+
+.mui-content {
+  background: #f7f7f7;
+  font-size: 0.75rem;
+}
+
+.mui-input-row label ~ input {
+  font-size: 0.75rem;
+  text-align: right;
+  padding-right: 40px;
+  color: #ea3333;
+}
+.mui-agree {
+  background: #f7f7f7 !important;
+}
+
+.mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio] {
+  left: 7px;
+}
+
+.mui-checkbox.mui-left label, .mui-radio.mui-left label {
+    padding-left: 38px;
+}

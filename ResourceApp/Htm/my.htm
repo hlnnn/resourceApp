@@ -1,0 +1,127 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/my.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+
+
+<!-- BodyFooter -->
+
+<!-- Content -->
+
+<div class="mui-content">
+  <div class="statusbar mui-text-center">
+    <a href="javascript:;" data-bind="event: { tap: login }, visible: !headImagePathVisible()">
+      <span class="mui-icon iconfont icon-Login"></span>
+      <div class="mui-h3">登录查看更多内容</div>
+    </a>
+    <a href="javascript:;" data-bind="event: { tap: myinfo }, visible: headImagePathVisible">
+      <img class="headImagePath" data-bind="attr: { src: headImagePath }" />
+      <div class="mui-h3" data-bind="text: memberName"></div>
+      <div class="mui-h3" data-bind="text: phoneNumber" style="margin-top: -0.5rem"></div>
+    </a>
+  </div>
+  <ul class="mui-table-view mui-grid-view mui-grid-9 contentMargin">
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: myorder }">
+        <span class="mui-icon iconfont icon-my-order"></span>
+        <div class="mui-media-body">我的订单</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: myhouse }">
+        <span class="mui-icon iconfont icon-housing-resources"><!--<span class="mui-badge">5</span>--></span>
+        <div class="mui-media-body">我的房源</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3 msgbox">
+      <span class="mui-badge" style="display: none" data-bind="text: messageNumber,visible: messageNumberVisible"></span>
+      <a href="javascript:;" data-bind="event: { tap: msgbox }">
+        <span class="mui-icon iconfont icon-information-box"></span>
+        <div class="mui-media-body">信息箱</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: mycollect }">
+        <span class="mui-icon iconfont icon-collection"></span>
+        <div class="mui-media-body">我的收藏</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: myqa }">
+        <span class="mui-icon iconfont icon-my-question"></span>
+        <div class="mui-media-body">我的问答</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: houseqa }">
+        <span class="mui-icon iconfont icon-real-estate-ask"></span>
+        <div class="mui-media-body">房产问答</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: qrcode }">
+        <span class="mui-icon iconfont icon-QR-code"></span>
+        <div class="mui-media-body">二维码</div>
+      </a>
+    </li>
+    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
+      <a href="javascript:;" data-bind="event: { tap: more }">
+        <span class="mui-icon iconfont icon-list"></span>
+        <div class="mui-media-body">更多</div>
+      </a>
+    </li>
+  </ul>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/my.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/transferAgent.css" rel="stylesheet" />
+
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title" data-bind="text: title">委托评估</h1>
+</header>
+
+<!-- BodyFooter -->
+
+<!--底部联系方式-->
+<link href="../cssApp/serviceCall.css" rel="stylesheet"/>
+<nav class="mui-bar mui-bar-tab navBgColor">
+  <div class="mui-row">
+    <div class="mui-col-sm-6 mui-col-xs-6 left">
+      <i class="iconfont icon-fixed-telephone mui-pull-left"></i>
+      <div class="mui-right">
+        <p>服务热线：</p>
+        <p data-bind="text: phoneService"></p>
+      </div>
+    </div>
+    <div class="mui-col-sm-6 mui-col-xs-6 right">
+      <i class="iconfont icon-phone" data-bind="event: { tap: phone }"> </i>
+      <i class="iconfont icon-leaving-a-message" data-bind="event: { tap: connect }" ></i>
+    </div>
+  </div>
+</nav>
+
+<!-- Content -->
+
+<div class="mui-content">
+  <div data-bind="visible: !isNext()">
+    <form class="mui-input-group">
+      <div class="mui-input-row">
+        <label>行政区域</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择行政区域" readonly="readonly" data-bind="value: areaName, event: { tap: choiceArea }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label>产证地址</label>
+        <input type="text" class="mui-input-clear" placeholder="请填写产证地址" data-bind="value: address">
+      </div>
+      <div class="mui-input-row">
+        <label>联系人</label>
+        <input type="text" class="mui-input-clear" placeholder="请输入您的姓名" data-bind="value: contactName">
+      </div>
+      <div class="mui-input-row">
+        <label>联系电话</label>
+        <input type="number" class="mui-input-clear" placeholder="请输入联系电话" data-bind="value: contactPhone">
+      </div>
+      <div class="mui-input-row">
+        <label>预约时间</label>
+        <input type="text" class="mui-input-clear" placeholder="请预约勘察时间" readonly="readonly" data-bind="value: orderTime, event: { tap: choiceOrderTime }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label>物业类型</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择物业类型" readonly="readonly" data-bind="value: theType, event: { tap: choiceTheType }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label>估价目的</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择估价目的" readonly="readonly" data-bind="value: valuationPurpose, event: { tap: choiceValuationPurpose }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label>房屋面积</label>
+        <span class="unit zwjy-main">m²</span>
+        <input type="number" class="mui-input-clear mui-left" placeholder="请输入房屋面积" data-bind="value: square">
+      </div>
+    </form>
+    <div class="mui-input-row mui-checkbox mui-agree mui-left">
+      <label>我已阅读并同意“<a class="zwjy-main" data-bind="event: { tap: serviceStatement }" href="agreeStatement.htm">法律声明</a>”</label>
+      <input type="checkbox" data-bind="checked: isRead" />
+    </div>
+    <div class="mui-btn mui-btn-block zwjy-btn-main step" data-bind="event: { tap: next }">下一步</div>
+  </div>
+  <div style="display: none;" data-bind="visible: isNext">
+    <ul class="mui-table-view">
+      <li class="mui-table-view-cell">
+        <span>行政区域</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: areaName"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>产证地址</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: address"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>联系人</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: contactName"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>联系电话</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: contactPhone"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>预约时间</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: orderTime"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>物业类型</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: theType"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>估价目的</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: valuationPurpose"></span>
+      </li>
+      <li class="mui-table-view-cell">
+        <span>房屋面积</span>
+        <span class="zwjy-main mui-pull-right">m²</span>
+        <span class="zwjy-main mui-pull-right" data-bind="text: square"></span>
+      </li>
+    </ul>
+    <div class="mui-btn mui-btn-block zwjy-btn-main step" data-bind="event: { tap: submit }">提交订单</div>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/commissionedEstimate.js" type="text/javascript"></script>
+
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

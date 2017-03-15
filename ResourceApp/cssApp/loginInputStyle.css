@@ -1,0 +1,152 @@
+body {
+  background: #fff !important;
+}
+
+.mui-content {
+  background: #fff;
+  margin-top: 1rem;
+}
+
+.mui-content-padded {
+  margin: 0 1rem;
+}
+
+.mui-input-group > .mui-input-row {
+  margin-top: 1rem;
+  border: 1px solid #666666;
+}
+
+  .mui-input-group > .mui-input-row:nth-child(1) {
+    margin-top: 0rem;
+  }
+
+.input-group-addon {
+  font-size: 1rem;
+  float: left;
+  color: #555;
+  text-align: center;
+  color: #ea3333;
+  border-right: 1px solid #666666;
+}
+
+.input-group-addon {
+  font-size: 1.1rem;
+  padding-top: -0.1rem !important;
+}
+
+.inputText {
+  float: left;
+  color: #999999;
+  text-align: right;
+}
+
+input[type=color],
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week],
+select,
+textarea {
+  font-size: 0.65rem;
+  margin-bottom: 0px;
+}
+
+/*取消input顶部跟底部线条*/
+.mui-input-group:before {
+  height: 0px;
+}
+
+.mui-input-group:after {
+  height: 0px;
+}
+
+.mui-input-group .mui-input-row:after {
+  height: 0px;
+}
+
+.passwordBox {
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+  color: #999999 !important;
+}
+
+
+/*记住密码圆圈*/
+.mui-checkbox input[type=checkbox]:before,
+.mui-radio input[type=radio]:before {
+  font-family: Muiicons;
+  font-size: 0.7rem;
+  line-height: 1.4rem;
+  margin-left: -1rem;
+}
+
+.remenberPassword {
+  margin-left: -1.3rem;
+}
+
+.mui-checkbox input[type=checkbox]:checked:before {
+  content: '\e441';
+  color: #ea3333;
+}
+
+.loginButton button {
+  color: #fff;
+  border: 1px solid #ddd;
+  background-color: #ddd;
+  width: 46%;
+}
+
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  border-radius: 0px;
+}
+
+.mui-input-row label.split {
+  padding: 0 0.5rem;
+  border-right: 1px solid #666;
+  width: 10%;
+}
+
+.mui-input-row label ~ input,
+.mui-input-row label ~ select,
+.mui-input-row label ~ textarea {
+  width: 90%;
+  padding-left: 0.5rem;
+  color: #999;
+}
+
+.mui-justify .mui-btn + input[type='number'] {
+  padding-left: 0.5rem;
+  float: right;
+  width: 70%;
+}
+
+.confirmButton {
+  margin-top: 1rem;
+}
+
+/*验证码*/
+#btnVerificationCode {
+  margin-top: 0.6rem;
+  border: 0;
+  background: transparent;
+  color: #ea3333;
+  border-left: 1px solid #666666;
+  padding: 0.05rem 0.3rem;
+}
+
+.mui-agree.mui-checkbox input[type=checkbox]:before {
+  font-size: 0.8rem;
+}

@@ -1,0 +1,64 @@
+﻿.mui-bar-header-secondary {
+  height: auto;
+}
+
+.mui-row:after,
+.mui-row:before {
+  display: block;
+}
+
+.mui-search input[type='search'] {
+  background-color: white;
+  border-radius: 1rem;
+  -moz-box-shadow: 1px 1px 4px #ABABAB;
+  -webkit-box-shadow: -1px 1px 4px #ABABAB;
+  box-shadow: 1px 1px 4px #ABABAB;
+}
+
+.mui-input-row {
+  padding: 2px;
+}
+
+.mui-indexed-list-search {
+  border-bottom: none !important;
+  z-index: 15;
+}
+
+/*内容*/
+
+.mui-table-view-chevron .mui-table-view-cell {
+  padding-right: 0px;
+}
+
+/*图片大小*/
+.mui-table-view .mui-media-object {
+  line-height: 42px;
+  max-width: 2.5rem;
+  height: 2.5rem;
+}
+
+.listStyle img {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.listStyle p:nth-child(1) {
+  font-size: 0.7rem;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.listStyle p:nth-child(2) {
+  font-size: 0.5rem;
+  color: #999;
+  margin-top: 0.01rem;
+}
+
+.listStyle p:nth-child(3) {
+  font-size: 0.5rem;
+  color: #999;
+  margin-top: -0.3rem;
+}
+
+.icon {
+  font-size: 1rem;
+}

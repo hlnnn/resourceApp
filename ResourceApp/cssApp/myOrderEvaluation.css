@@ -1,0 +1,83 @@
+﻿.mui-content {
+  text-align: center;
+  /*background: #fff;*/
+}
+
+.mui-bar-tab~.mui-content {
+  /*padding-bottom: 0px;*/
+}
+
+.mui-content p {
+  margin-bottom: 3px !important;
+}
+
+.mui-content svg {
+  margin-top: 1rem;
+  font-size: 4.5rem;
+}
+
+
+/*nav按钮样式*/
+
+.mui-bar .mui-btn-block {
+  background: #ea3333;
+  font-size: 0.9rem;
+  top: 6px;
+  margin-bottom: 0;
+  padding: 5px 0;
+  border-radius: 0;
+  height: 2.5rem;
+}
+
+.mui-bar .mui-btn {
+  position: static;
+}
+
+
+/*.contanctInformation {
+  padding-bottom: 1rem;
+}*/
+
+.contanctInformation>div {
+  border-bottom: 0.25rem solid #f7f7f7;
+}
+
+.detail {
+  width: 60%;
+  text-align: left !important;
+  margin-left: 25%;
+  margin-top: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.evaluation {
+  color: black !important;
+  padding: 1rem;
+}
+
+.evaluation p {
+  color: black !important;
+}
+
+.evaluation i {
+  color: #999999;
+  font-size: 0.9rem;
+  margin-left: 0.2rem;
+}
+
+.icon-star.selected {
+  color: #f1a226;
+}
+
+textarea {
+  border: 0px;
+  font-size: 0.7rem;
+}
+
+.mui-table-view-cell:after {
+  height: 0px;
+}
+
+.mui-table-view-cell:nth-of-type(3n-2):after {
+  height: 1px;
+}

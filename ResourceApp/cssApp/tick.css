@@ -1,0 +1,8 @@
+﻿  .mui-navigate-checkmarkempty:after {
+    font-size:30px;
+    color: blue;
+    content: '\e472';
+  }
+  .mui-content{
+    font-size: 0.75rem;
+  }

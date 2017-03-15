@@ -1,0 +1,144 @@
+﻿/*订单类型*/
+
+.mui-bar {
+  height: 44px;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+/*nav-tab的 line-height值*/
+
+.mui-segmented-control .mui-control-item {
+  line-height: 44px;
+}
+
+.mui-bar.mui-bar-header-secondary .mui-segmented-control {
+  top: -2px;
+}
+
+.mui-segmented-control.mui-segmented-control-inverted .mui-control-item {
+  border-bottom: 1px solid #ddd;
+}
+
+.order-type {
+  text-align: left;
+  position: absolute;
+  top: 88px;
+  z-index: 999;
+  width: 100%;
+  display: none;
+  /*-webkit-box-shadow: -3px 3px 5px #dddddd;
+  -moz-box-shadow: -3px 3px 5px #dddddd;
+  box-shadow: -3px 3px 5px #dddddd;*/
+}
+
+.mui-table-view-cell{
+  padding: 0px;
+}
+
+.mui-table-view-cell> a:not(.mui-btn) {
+  font-size: 0.75rem;
+  background: #fff;
+  border-bottom: 1px solid #dddddd;
+  padding: 1.2rem;
+}
+
+.order-type {
+  border-top: 1px solid #dddddd;
+}
+
+.order-type li:nth-child(1) {
+  border-bottom: 1px solid #dddddd;
+}
+
+.edit {
+  border-bottom: 1px solid #dddddd;
+}
+
+/*按钮*/
+.button {
+  text-align: right;
+  border: 1px solid transparent;
+  padding: 0.25rem;
+}
+
+.button button {
+  font-size: 0.65rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.35rem;
+  border: 0;
+}
+
+.button button:nth-child(2) {
+  margin-right: 0.5rem;
+  margin-left: 1.5rem;
+  color: #fff !important;
+  background: #cccccc;
+}
+
+/*状态*/
+
+.iconfontColor {
+  color: #37d835 !important;
+}
+
+.state {
+  padding-left: 0.5rem;
+  font-size: 0.75rem;
+  line-height: 38px;
+}
+
+.state i {
+  font-size: 1rem;
+}
+
+/*订单内容*/
+
+.orderDetail {
+  padding: 0.5rem;
+}
+
+.type {
+  text-align: center;
+}
+
+.type> svg {
+  font-size: 2.5rem;
+}
+
+.type span {
+  font-size: 1rem;
+  margin-left: 0.4rem;
+  margin-top: 19px !important;
+  line-height: 2 !important;
+}
+
+.typeContent {
+  margin-top: 0.3rem;
+  padding-left: 0.8rem;
+}
+
+.typeContent p {
+  color: black;
+  font-size: 0.65rem;
+}
+
+.mui-table-view:after {
+  height: 0px;
+}
+
+.orderContent+ .orderContent {
+  margin-top: 0.5rem;
+}
+
+.mui-table-view:before {
+  height: 0px;
+}
+
+.mui-table-view-cell::after {
+  height: 0px;
+}
+
+.mui-table-view-cell:nth-of-type(3n-2):after {
+  height: 1px;
+}

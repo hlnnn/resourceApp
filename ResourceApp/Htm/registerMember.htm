@@ -1,0 +1,101 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/register.css" rel="stylesheet" />
+<link href="../cssApp/loginInputStyle.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">会员注册</h1>
+</header>
+
+<!-- BodyFooter -->
+
+<img class="footer" src="../images/login/bg.jpg" style="width: 100%" />
+
+<!-- Content -->
+
+<div class="mui-content content">
+  <div class="mui-content-padded" data-bind="with: member">
+    <form class="mui-input-group">
+      <div class="mui-input-row mui-justify">
+        <label class="split"><i class="iconfont icon-mobile zwjy-main"></i></label>
+        <input type="number" class="mui-input-clear" placeholder="请输入手机号码" data-bind="textInput: phoneNumber">
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label class="split"><i class="iconfont icon-verification-code zwjy-main"></i></label>
+        <button type="button" id="btnVerificationCode" class="mui-btn zwjy-btn-main" data-bind="text: btnVerificationCode,event: { tap: $parent.getVerificationCode }, style: { 'color': !disableCss() ? '#ccc' : '#ea3333' }">获取验证码</button>
+        <input type="number" class="mui-input-clear" placeholder="请输入验证码" data-bind="textInput: iCode">
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label class="split"><i class="iconfont icon-account-number zwjy-main"></i></label>
+        <input type="number" class="mui-input-clear" placeholder="请输入用户名" data-bind="textInput: memberName">
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label class="split"><i class="iconfont icon-password zwjy-main"></i></label>
+        <input type="number" class="mui-input-clear mui-input-password" placeholder="请输入密码" data-bind="textInput: passWord">
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label class="split"><i class="iconfont icon-password zwjy-main"></i></label>
+        <input type="number" class="mui-input-clear mui-input-password" placeholder="请再次输入密码" data-bind="textInput: confirmPassword">
+      </div>
+    </form>
+    <div class="mui-input-row mui-checkbox mui-left mui-agree">
+      <input type="checkbox" value="1" checked="checked" data-bind="checked: isRead" />
+      <label>我已阅读并同意<span>“<a class="zwjy-main" data-bind="event: { tap: $parent.agree }" href="agreeStatement.htm">用户协议</a>”</span></label>
+    </div>
+    <button class="mui-btn mui-btn-block zwjy-btn-main" data-bind="event: { tap: $parent.register }">注册</button>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/register.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

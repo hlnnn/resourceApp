@@ -1,0 +1,58 @@
+﻿ .mui-content ul:nth-child(2) {
+    margin-top: 0.5rem;
+  }
+
+  .mui-content span {
+    font-size: 0.75rem;
+  }
+/*关于我们*/
+.version {
+  margin: 1.5rem 3rem 2rem;
+}
+
+  .version img {
+    width: 6rem;
+    height: 6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .version p {
+    font-size: 0.8rem;
+    margin-bottom: 0rem;
+  }
+
+/*帮助反馈*/
+.feedback {
+  width: 94%;
+  margin: 3%;
+}
+
+  .feedback input, textarea {
+    font-size: 0.75rem;
+  }
+
+textarea {
+  border-radius: 0px;
+  margin-top: 1rem;
+}
+
+.feedback input[type=text] {
+  margin-bottom: 0px;
+}
+
+.feedback input[type=number] {
+  margin-bottom: 3rem;
+}
+/*推荐应用*/
+.recommendedApplications{
+  padding:0 1rem;
+  margin-top:0.3rem;
+  margin-bottom:0.3rem;
+  font-size:0.65rem;
+}
+.recommendedApplicationsTitle{
+ color:black;
+}
+.recommendedApplicationsContent{
+  font-size: 0.6rem !important;
+}

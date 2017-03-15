@@ -1,0 +1,23 @@
+﻿#content {
+  margin: 10px;
+}
+
+h4 {
+  margin-bottom: 0.5rem;
+}
+
+.termsOfService {
+  font-weight: 600;
+}
+
+.smallTitle {
+  font-size: 14px;
+}
+
+.mechanism {
+  color: #4398EE !important;
+}
+
+p {
+  color: black;
+}

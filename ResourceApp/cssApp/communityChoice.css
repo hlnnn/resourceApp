@@ -1,0 +1,8 @@
+﻿.mui-scroll-wrapper .mui-scroll {
+  max-height: 600px;
+  overflow: auto;
+}
+
+.divSearch, .community-modify {
+  margin: 0.75rem 0.5rem 0;
+}

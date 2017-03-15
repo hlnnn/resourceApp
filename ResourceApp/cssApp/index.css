@@ -1,0 +1,12 @@
+﻿#nav-footer a {
+  color: #666;
+}
+
+#nav-footer a {
+  color: #666;
+  text-align: center;
+}
+
+  #nav-footer a.mui-active {
+    color: #ea3333;
+  }

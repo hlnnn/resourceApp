@@ -1,0 +1,108 @@
+﻿/*body {
+  overflow: hidden;
+}*/
+
+.mui-content {
+  background-color: #f7f7f7;
+  line-height: 0.7rem;
+  padding-bottom: 40px !important;
+}
+
+.body,.nav-right,.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before,.mui-input-row input,.mui-input-row  label {
+  font-size: 0.7rem;
+}
+
+.tip,.btn-icode {
+  background-color: #fff !important;
+}
+
+.tip,.tip a {
+  color: #999;
+}
+
+.tip {
+  padding: .5rem 0;
+}
+
+.mui-input-row label.split {
+  max-width: 30%;
+}
+
+.mui-justify label~ul li input,.three-row label~ul li input {
+  line-height: 1.4rem;
+}
+
+.mui-input-row label~input {
+  float: none;
+  padding-left: 15px;
+}
+
+.three-row label~input {
+  width: 32%; 
+}
+
+.three-row label~input~ul li label {
+  padding: 11px 32px 11px 0;
+}
+
+.mui-input-row label~input~button {
+  width: auto !important;
+  border: none;
+  padding: 0 0.75rem !important;
+  border-left: 1px solid #ddd;
+  margin: 0.75rem 0;
+}
+
+.mui-bar-tab,.mui-bar .mui-btn-block {
+  height: 44px;
+}
+
+.mui-bar .mui-btn-block {
+    position: static;
+    background: #ea3333;
+    font-size: 0.9rem;
+    top: 6px;
+    margin-bottom: 0;
+    padding: 5px 0;
+    border-radius: 0;
+    
+}
+/*阅读声明*/
+/*.mui-input-group:after {
+  height: 0px;
+}
+
+.mui-input-group .mui-input-row:after {
+  height: 0px;
+}*/
+
+/*.fillContent > div {
+  border-bottom: 1px solid #ddd;
+}*/
+
+.mui-agree {
+  background: #f7f7f7 !important;
+}
+
+/*阅读声明按钮跟文字位置*/
+.mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio] {
+  left: 15px;
+}
+
+.mui-checkbox.mui-left label, .mui-radio.mui-left label {
+    padding-left: 38px;
+}
+/*验证码*/
+#btnVerificationCode {
+  margin-top: 0.6rem;
+  border: 0;
+  background: transparent;
+  color: #ea3333 ;
+  border-left: 1px solid #666666;
+  padding: 0.15rem 0.3rem;
+  border-radius: 0;
+}
+
+.mui-input-row .mui-btn+ input[type='number'] {
+  width: 45% !important;
+}

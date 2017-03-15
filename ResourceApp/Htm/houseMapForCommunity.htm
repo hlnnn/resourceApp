@@ -1,0 +1,132 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/houseMap.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header class="mui-bar mui-bar-nav mui-content mui-row" id="header">
+  <div class="mui-col-xs-1 mui-text-left">
+    <a class="mui-icon mui-icon-back mui-icon-left-nav mui-action-back"></a>
+  </div>
+  <div class="mui-input-row mui-search mui-pull-left mui-col-xs-10" style="clear: none; margin:0">
+    <input type="search" class="mui-input-clear" placeholder="搜索小区名、地址" data-bind="textInput: keyWord"/>
+  </div>
+  <div class="mui-col-xs-1 mui-text-right">
+    <a class="mui-icon mui-icon-bars mui-text-left" data-bind="event: { tap: $root.goHouseList }"></a>
+  </div>
+</header>
+
+<!-- BodyFooter -->
+
+
+<!-- Content -->
+
+<div class="mui-content">
+  <div id="allmap"></div>
+</div>
+
+<div id="house-list" class="mui-content mui-scroll-wrapper">
+  <div class="mui-scroll">
+    <ul class="mui-table-view" style="display: none" data-bind="foreach: houseList, visible: houseList().length">
+      <li class="mui-table-view-cell mui-media">
+        <a href="javascript:;" data-bind="event: { tap: $parent.detail }">
+          <img class="mui-media-object mui-pull-left" data-bind="attr: { src: imagePath }" />
+          <div class="icon-real">
+            <!-- ko if: isSiteProspect -->
+            <img src="../images/ico_detail_live.png" />
+            <!-- /ko -->
+            <!-- ko if: !isSiteProspect && isLandlordCer -->
+            <img src="../images/ico_detail_100.png" />
+            <!-- /ko -->
+          </div>
+          <div class="mui-media-body">
+            <h4 class="mui-ellipsis title">
+              <span data-bind="text: theTitle"></span>
+              <!-- ko if: source === 'sourceZhiWu' -->
+              <img src="../images/mark_zhiwu.jpg" class="idtag" />
+              <!-- /ko -->
+              <!-- ko if: source === 'sourcePersonal' -->
+              <img src="../images/mark_geren.jpg" class="idtag" />
+              <!-- /ko -->
+              <!-- ko if: source === 'sourceBroker' -->
+              <img src="../images/mark_jjr.jpg" class="idtag" />
+              <!-- /ko -->
+            </h4>
+            <div class="subTitle">
+              <!-- ko ifnot: theFloor -->
+              <span data-bind="text: address" class="blue"></span>
+              <!-- /ko -->
+              <!-- ko if: theFloor -->
+              <span data-bind="text: squareDisplay"></span>
+              <span data-bind="text: houseTypeDisplay"></span>
+              <span data-bind="text: floorDisplay"></span>
+              <!-- /ko -->
+            </div>
+            <div class="features" data-bind="foreach: features">
+              <span data-bind="text: $data, style: { 'border-color': $root.color[$index()], 'color': $root.color[$index()] }"></span>
+            </div>
+            <p class="mui-pull-right">
+              <span class="unitPrice" data-bind="text: unitPriceDisplay"></span>
+              <span class="totalPrice" data-bind="text: totalPriceDisplay"></span>
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/modules/houseListResult.js"></script>
+<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=7ghDmSmm8cVouS5Yk0Zdy3kN"></script>
+<script type="text/javascript" src="../js/zwjy.baiduMap.js"></script>
+<script type="text/javascript" src="../jsApp/modules/houseMapForCommunity.js"></script>
+
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

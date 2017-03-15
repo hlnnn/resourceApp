@@ -1,0 +1,44 @@
+﻿body {
+  color: #999;
+  font-size: 0.65rem;
+}
+
+.mui-content>.mui-table-view:first-child {
+  margin: 0 !important;
+  padding-top: 0.25rem;
+}
+
+#info-list ul li h4 {
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+#info-list ul li h4,#info-list ul li p {
+  margin-bottom: 0.5rem;
+}
+
+.icon-new {
+  color: #ea3333;
+}
+
+.readying {
+  color: #333;
+}
+
+.mui-table-view-cell.mui-collapse .mui-collapse-content {
+  margin: 0 -15px -11px;
+  padding-top: 0;
+}
+
+.mui-table-view-cell.mui-active .mui-ellipsis {
+  display: none;
+}
+
+.mui-table-view-cell.mui-active,.mui-table-view-cell.mui-collapse .mui-collapse-content {
+  background-color: #f7f7f7;
+}
+
+.mui-navigate-right:after, .mui-push-left:after, .mui-push-right:after {
+  top: 0.9rem;
+  font-size: 1rem;
+}

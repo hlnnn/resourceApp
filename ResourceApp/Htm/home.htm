@@ -1,0 +1,241 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/home.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+  <div class="mui-scroll">
+    <div id="ads-section">
+  <div data-bind="visible: !cityAds().length">
+    <img src="../images/noImage.jpg" alt=""/>
+  </div>
+  <div class="logo">
+    <img src="../images/logo.png" alt=""/>
+  </div>
+  <div style="display: none;" class="mui-slider" data-bind="visible: cityAds().length">
+    <div class="mui-slider-group mui-slider-loop">
+      <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+      <!-- ko if: last() -->
+      <div class="mui-slider-item mui-slider-item-duplicate" data-bind="with: last">
+        <a href="#">
+          <img data-bind="attr: imgAttr"/>
+        </a>
+      </div>
+      <!-- /ko -->
+      <!-- ko foreach: cityAds -->
+      <div class="mui-slider-item">
+        <a href="#">
+          <img data-bind="attr: imgAttr"/>
+        </a>
+      </div>
+      <!-- /ko -->
+      <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一张轮播) -->
+      <!-- ko if: first() -->
+      <div class="mui-slider-item mui-slider-item-duplicate" data-bind="with: first">
+        <a href="#">
+          <img data-bind="attr: imgAttr"/>
+        </a>
+      </div>
+      <!-- /ko -->
+    </div>
+  </div>
+</div>
+
+<!-- select city -->
+<div id="city-section" class="absolute">
+  <button id="city-switch" type="button" class="mui-btn mui-icon iconfont icon-down-copy mui-right mui-pull-right" data-bind="text: cityName, event: { tap: switchCity }"></button>
+</div>
+<!-- search bar -->
+<div id="search-section" class="absolute" data-bind="css: { header: visible() }">
+  <div class="mui-input-row mui-search mui-active mui-text-center">
+    <input type="search" class="mui-input-clear search" readonly="readonly" data-bind="event: { tap: goSearch }" value="请输入搜索内容，例如：地铁">
+  </div>
+</div>
+<!-- house section -->
+<div class="mui-content" style="display: none;" id="house-section" data-bind="visible: modules.length">
+  <ul class="mui-pull-left" data-bind="foreach: modules">
+    <li class="mui-pull-left text-center" data-bind="event: { tap: $parent.goTo }">
+      <i class="iconfont" data-bind="css: moduleCss, color: moduleColor, style: { color: fontColor }"></i>
+      <p class="title" data-bind="text: title"></p>
+    </li>
+  </ul>
+
+  <!--<div id="publish">
+    <div class="mui-row" data-bind="foreach: pubishList,visible:　pubishList.length">
+      <div class="mui-col-sm-3 mui-col-xs-3" data-bind="event: { tap: $parent.goTo }">
+        <i class="iconfont" data-bind="css: moduleCss, color: moduleColor, style: { color: fontColor }"></i>
+         <p class="title" data-bind="text: title"></p>
+        <p data-bind="text: title"></p>
+      </div>
+    </div>
+  </div>-->
+  <div class="mui-clearfix"></div>
+</div>
+<!-- service section -->
+<div style="display: none;" id="service-section" data-bind="visible: services.length">
+  <ul class="mui-clearfix" data-bind="foreach: services" id="service">
+    <li class="mui-pull-left" data-bind="css: { 'end': $index() % 2 === 1, 'top': $index() < 2 } ,event: { tap: toService}">
+      <svg class="mui-pull-left icon" aria-hidden="true">
+        <use xlink:href="#icon-daibanoguohu" data-bind="attr: { 'xlink:href': svgCss }"></use>
+      </svg>
+      <h4 data-bind="text: title"></h4>
+      <p data-bind="text: subTitle"></p>
+    </li>
+  </ul>
+  <div id="professional" class="mui-clearfix">
+    <img src="../images/dropTriangle.png" style="width: auto;margin-top: -0.5rem;"/>
+    <div data-bind="foreach: personalList" class="mui-row professionalContent mui-text-center" style="">
+      <div data-bind="event: { tap: toService }" class="mui-col-sm-3 mui-col-xs-3">
+        <svg class="icon" aria-hidden="true">
+          <use xlink:href="#icon-designer" data-bind="attr: { 'xlink:href': svgCss }"></use>
+        </svg>
+        <p data-bind="text: title"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- news section -->
+<div style="display: none;" id="news-section" data-bind="visible: first()">
+  <div class="mui-card first" data-bind="with: first">
+    <div class="mui-card-header" data-bind="event: { tap: $parent.goInfoList }">
+      <a class="mui-navigate-right header">
+        <span class="bar">&nbsp;</span>
+        资讯
+      </a>
+    </div>
+    <div class="mui-slider">
+      <div class="mui-slider-group" data-bind="event: { tap: $parent.goDetail }">
+        <a href="javascript:;">
+          <img data-bind="attr: { src: imagePath, orginSrc: orginSrc }" />
+          <p class="mui-slider-title">
+            <span class="mui-ellipsis title" data-bind="text: title"></span>
+            <span class="mui-pull-right date" data-bind="text: date"></span>
+          </p>
+        </a>
+      </div>
+    </div>
+  </div>
+  <div style="display: none;" class="mui-card list" data-bind="visible: news().length">
+    <ul class="mui-table-view list" data-bind="foreach: news.slice(1)">
+      <li class="mui-table-view-cell mui-media" data-bind="event: { tap: $parent.goDetail }">
+        <a href="javascript:;">
+          <img class="mui-media-object mui-pull-left" data-bind="attr: { src: imagePath, orginSrc: orginSrc }" />
+          <div class="mui-media-body">
+            <p class="mui-ellipsis-2 title" data-bind="text: title"></p>
+            <p class="mui-pull-right date" data-bind="text: date"></p>
+          </div>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="mui-clearfix"></div>
+</div>
+<!-- recommend section -->
+<div style="display: none;" id="recommend-section" data-bind="visible: recommends().length">
+  <div class="mui-card">
+    <div class="mui-card-header" data-bind="event: { tap: goHouseList }">
+      <a class="mui-navigate-right header">
+        <span class="bar">&nbsp;</span>
+        推荐房源
+      </a>
+    </div>
+    <ul class="mui-table-view list" data-bind="foreach: recommends">
+      <li class="mui-table-view-cell mui-media" data-bind="event: { tap: $parent.goHouseDetail }">
+        <a href="javascript:;">
+          <img class="mui-media-object mui-pull-left" data-bind="attr: { src: imagePath, orginSrc: orginSrc }" />
+          <div class="mui-media-body">
+            <p class="mui-ellipsis title" data-bind="text: theTitle"></p>
+            <div class="subTitle">
+              <span data-bind="text: squareDisplay"></span>
+              <span data-bind="text: houseTypeDisplay"></span>
+              <span data-bind="text: floorDisplay"></span>
+            </div>
+            <div class="features" data-bind="foreach: features">
+              <span data-bind="text: $data, style: { 'border-color': $root.color[$index()], 'color': $root.color[$index()] }"></span>
+            </div>
+            <p class="mui-pull-right date">
+              <span class="unitPrice" data-bind="text: unitPriceDisplay"></span>
+              <span class="totalPrice" data-bind="text: totalPriceDisplay"></span>
+            </p>
+          </div>
+        </a>
+      </li>
+    </ul>
+    <div class="mui-clearfix"></div>
+  </div>
+  <button type="button" class="mui-but mui-btn-block more-house" data-bind="event: { tap: goHouseList }">查看更多房源</button>
+</div>
+
+  </div>
+</div>
+<div id="topPopover" class="popoverContent mui-hidden">
+  <h4>发布房源</h4>
+  <p>请选择发布类型</p>
+  <ul class="mui-table-view mui-row">
+    <li class="mui-table-view-cell mui-col-xs-3" data-bind="event:{ tap:　saleHouse }">
+      <i class="iconfont icon-salehouse zwjy-main"></i>
+      <p>出售</p>
+    </li>
+    <li class="mui-table-view-cell mui-col-xs-3" data-bind="event:{ tap:　rentHouse }">
+      <i class="iconfont icon-wantbuyhouse zwjy-main"></i>
+      <p>出租</p>
+    </li>
+    <li class="mui-table-view-cell mui-col-xs-3" data-bind="event:{ tap:　wantedBuyHouse }">
+      <i class="iconfont icon-renthouse zwjy-main"></i>
+      <p>求购</p>
+    </li>
+    <li class="mui-table-view-cell mui-col-xs-3" data-bind="event:{ tap:　wantedRentHouse }">
+      <i class="iconfont icon-wantrenthouse zwjy-main"></i>
+      <p>求租</p>
+    </li>
+  </ul>
+</div>
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/home.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

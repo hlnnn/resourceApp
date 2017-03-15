@@ -1,0 +1,219 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/loanPurchaseConsume.css" rel="stylesheet" />
+<link href="../css/mui.picker.css" rel="stylesheet" />
+<link href="../css/mui.poppicker.css" rel="stylesheet" />
+
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">消费贷款申请</h1>
+</header>
+
+<!-- BodyFooter -->
+
+
+<!-- Content -->
+
+<div id="content" class="mui-content">
+  <div data-bind="visible: !isLink() && !isCredit()">
+    <ul class="mui-table-view mui-table-view-chevron" style="margin-bottom: 0.5rem;">
+      <li class="mui-table-view-cell mui-media">
+        <img class="mui-media-object mui-pull-left" data-bind="attr: { src: logoImagePath }">
+        <div class="mui-media-body">
+          <p data-bind="text: theName"></p>
+          <p class="mui-ellipsis redColor">月利率：<span data-bind="text:　secondYearRate">--</span></p>
+          <p class="mui-ellipsis"><span data-bind="text: feature"></span></p>
+        </div>
+      </li>
+    </ul>
+    <form class="mui-input-group panel">
+      <div class="mui-input-row ">
+        <label class="split">公司类型</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择房屋类型" readonly="readonly" data-bind="value: companyType, event: { tap: companyTypeTap }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label class="split">出生年份</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择您的出生年份" readonly="readonly" data-bind="value: birthYear, event: { tap: birthYearTap }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label class="split">工资发放</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择工资发放形式" readonly="readonly" data-bind="value: salaryType, event: { tap: salaryTypeTap }">
+        <a class="mui-navigate-right"></a>
+      </div>
+      <div class="mui-input-row">
+        <label class="split">每月工资:</label>
+        <span class="zwjy-main">元/月</span>
+        <input type="number" placeholder="请填写数字" data-bind="textInput: salary">
+      </div>
+      <div class="mui-input-row">
+        <label class="split">您的工龄</label>
+        <input type="text" class="mui-input-clear" placeholder="请选择您的工龄" readonly="readonly" data-bind="value: workingYearMonth, event: { tap: workingYearMonthTap }">
+        <a class="mui-navigate-right"></a>
+      </div>
+    </form>
+    <button class="mui-btn mui-btn-block zwjy-btn-main zwjy-summit" data-bind="event: { tap: next }, visible: !isLink()">下一步</button>
+    <button class="mui-btn mui-btn-block zwjy-btn-main zwjy-summit" style="display: none;" data-bind="event: { tap: submit }, visible: isLink">立即申请</button>
+  </div>
+
+  <div class="panel" style="display: none;" data-bind="visible: isCredit">
+    <form class="mui-input-group">
+      <div class="mui-input-row mui-justify">
+        <label>是否有信用卡:</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>是</label>
+            <input name="isCreditCard" type="radio" data-bind="checkedValue: 1, checked: isCreditCard">
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>否</label>
+            <input name="isCreditCard" type="radio" data-bind="checkedValue: 0, checked: isCreditCard">
+          </li>
+        </ul>
+      </div>
+      <div class="mui-input-row mui-justify" style="display: none;" data-bind="visible: isCreditCard() === 1">
+        <label>您有几张信用卡:</label>
+        <span class="zwjy-main">张</span>
+        <input type="number" class="mui-input-clear" placeholder="请输入数字" data-bind="textInput: creditCardCount">
+      </div>
+      <div class="mui-input-row mui-justify" style="display: none;" data-bind="visible: isCreditCard() === 1">
+        <label>信用卡额度总额:</label>
+        <span class="zwjy-main">元</span>
+        <input type="number" class="mui-input-clear" placeholder="请输入金额" data-bind="textInput: creditCardLimit">
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label>是否有负债（信用卡）:</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>是</label>
+            <input name="isDebt" type="radio" data-bind="checkedValue: 1, checked: isDebt">
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>否</label>
+            <input name="isDebt" type="radio" data-bind="checkedValue: 0, checked: isDebt">
+          </li>
+        </ul>
+      </div>
+      <div class="mui-input-row mui-justify" style="display: none;" data-bind="visible: isDebt() === 1">
+        <label>信用卡负债总额:</label>
+        <span class="zwjy-main">元</span>
+        <input type="number" class="mui-input-clear" placeholder="请输入金额" data-bind="textInput: debt">
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label>是否成功申请过贷款:</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>是</label>
+            <input name="isSucceedLoan" type="radio" data-bind="checkedValue: 1, checked: isSucceedLoan">
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>否</label>
+            <input name="isSucceedLoan" type="radio" data-bind="checkedValue: 0, checked: isSucceedLoan">
+          </li>
+        </ul>
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label>是否有负债（贷款）:</label>
+        <ul>
+          <li class="mui-input-row mui-radio">
+            <label>是</label>
+            <input name="isLoan" type="radio" data-bind="checkedValue: 1, checked: isLoan">
+          </li>
+          <li class="mui-input-row mui-radio">
+            <label>否</label>
+            <input name="isLoan" type="radio" data-bind="checkedValue: 0, checked: isLoan">
+          </li>
+        </ul>
+      </div>
+      <div class="mui-input-row mui-justify" style="display: none;" data-bind="visible: isLoan() === 1">
+        <label>贷款负债总额:</label>
+        <span class="zwjy-main">元</span>
+        <input type="number" class="mui-input-clear" placeholder="请输入金额" data-bind="textInput: loan">
+      </div>
+    </form>
+  </div>
+
+  <div class="panel" style="display: none;" data-bind="visible: isLink">
+    <form class="mui-input-group">
+      <div class="mui-input-row">
+        <label class="split">您的称呼</label>
+        <input type="text" class="mui-input-clear" placeholder="如王先生" data-bind="textInput: cerName" />
+      </div>
+      <div class="mui-input-row">
+        <label class="split">联系方式</label>
+        <input type="tel" class="mui-input-clear" placeholder="请输入您的联系方式" data-bind="textInput: phoneNumber" />
+      </div>
+      <div class="mui-input-row mui-justify">
+        <label class="split">手机验证码</label>
+        <button type="button" id="btnVerificationCode" class="mui-btn zwjy-btn-main" data-bind="text: btnVerificationCode, event: { tap: getVerificationCode }, style: { 'color': !disableCss() ? '#ccc' : '#ea3333' ">获取验证码</button>
+        <input type="number" class="mui-input-clear" placeholder="请输入验证码" data-bind="textInput: icode" />
+      </div>
+      <div class="mui-input-row">
+        <label class="split">电子邮箱</label>
+        <input type="email" class="mui-input-clear" placeholder="请输入您的电子邮箱" data-bind="textInput: email" />
+      </div>
+      <div class="mui-input-row textareaHeight">
+        <label class="split">补充信息</label>
+        <textarea class="mui-input-clear" placeholder="参考内容：本人希望10天内能贷到款，买房用，个人名下有全款房产1套，价值120万，拥有私家车一辆20万。现在在一家国企上班，工作3年，工作稳定，五险一金齐全。" data-bind="textInput: extend"></textarea>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../js/mui.picker.js" type="text/javascript"></script>
+<script src="../js/mui.poppicker.js" type="text/javascript"></script>
+<script src="../jsApp/modules/validateCode.js" type="text/javascript"></script>
+<script src="../jsApp/loanConsume.js" type="text/javascript"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

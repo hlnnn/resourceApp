@@ -1,0 +1,160 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../cssApp/houseList.css" rel="stylesheet" />
+<link href="../cssApp/myHouseLists.css" rel="stylesheet" />
+<style type="text/css">
+  .nodata {
+    text-align: center;
+  }
+
+    .nodata svg {
+      margin-top: 5rem;
+      font-size: 10rem;
+    }
+
+    .nodata p {
+      margin-top: 3rem;
+      font-size: 1rem;
+      color: #ddd;
+    }
+
+  .mui-segmented-control.mui-scroll-wrapper .mui-scroll {
+    background: #fff;
+  }
+</style>
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title">我的收藏</h1>
+</header>
+
+<!-- BodyFooter -->
+
+
+
+<!-- Content -->
+
+<div class="mui-content">
+  <div id="slider" class="mui-slider mui-fullscreen" data-bind="event:{ slide: slide}">
+    <div id="sider-scroll" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+      <div class="mui-scroll" data-bind="foreach: titles">
+        <a data-bind="text: title, attr:{ href: '#' + type }, css: { 'mui-active': $index() === 0 }" class="mui-control-item">二手房</a>
+      </div>
+    </div>
+    <div class="mui-slider-group" data-bind="foreach: titles">
+      <div data-bind="attr:{ id : type },css:{ 'mui-active': $index() === 0 }" class="mui-slider-item mui-control-content">
+        <div class="mui-scroll-wrapper" data-bind="attr: { id: type + '-scroll-wrapper' }">
+          <div class="mui-scroll">
+            <div class="mui-loading" data-bind="visible: !isInit() && houseList().length === 0">
+              <div class="mui-spinner">
+              </div>
+            </div>
+            <div style="display: none;" class="nodata" data-bind="visible: isInit() && houseList().length === 0">
+              <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-no-data"></use>
+              </svg>
+              <p>抱歉，暂无数据</p>
+            </div>
+            <ul style="display: none;" class="mui-table-view" data-bind="foreach: houseList, visible: houseList().length">
+              <li class="mui-table-view-cell mui-media" data-bind="event: { tap: $parent.detail }">
+                <img class="mui-media-object mui-pull-left" data-bind="attr: { src: imagePath }" />
+                <div class="icon-real">
+                  <!-- ko if: isSiteProspect -->
+                  <img style="width: 20px;" src="../images/ico_detail_live.png" />
+                  <!-- /ko -->
+                  <!-- ko if: !isSiteProspect && isLandlordCer -->
+                  <img style="width: 20px;" src="../images/ico_detail_100.png" />
+                  <!-- /ko -->
+                </div>
+                <div class="mui-media-body">
+                  <h4 class="mui-ellipsis title">
+                    <span data-bind="text: theTitle"></span>
+                    <!-- ko if: source === 'sourceZhiWu' -->
+                    <img style="width: 22px;" src="../images/mark_zhiwu.jpg" class="idtag" />
+                    <!-- /ko -->
+                    <!-- ko if: source === 'sourcePersonal' -->
+                    <img style="width: 22px;" src="../images/mark_geren.jpg" class="idtag" />
+                    <!-- /ko -->
+                    <!-- ko if: source === 'sourceBroker' -->
+                    <img style="width: 22px;" src="../images/mark_jjr.jpg" class="idtag" />
+                    <!-- /ko -->
+                  </h4>
+                  <div class="subTitle">
+                    <!-- ko ifnot: theFloor -->
+                    <span data-bind="text: address" class="blue"></span>
+                    <!-- /ko -->
+                    <!-- ko if: theFloor -->
+                    <span data-bind="text: squareDisplay"></span>
+                    <span data-bind="text: houseTypeDisplay"></span>
+                    <span data-bind="text: floorDisplay"></span>
+                    <!-- /ko -->
+                  </div>
+                  <div class="features" data-bind="foreach: features">
+                    <span data-bind="text: $data, style: { 'border-color': $root.color[$index()], 'color': $root.color[$index()] }"></span>
+                  </div>
+                  <p class="mui-pull-right">
+                    <span class="unitPrice" data-bind="text: unitPriceDisplay"></span>
+                    <span class="totalPrice zwjy-main" data-bind="text: totalPriceDisplay"></span>
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../jsApp/myCollectionList.js" type="text/javascript"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+﻿body, .blue {
+  font-size: 0.75rem !important;
+}
+
+.nav-right {
+  color: #fff !important;
+}
+
+.nav-tab div .mui-control-item {
+  background-color: #fff;
+  border-bottom: 2px solid #f7f7f7 !important;
+}
+
+.nav-tab .mui-control-item.mui-active {
+  border-bottom-color: #ea3333 !important;
+}
+
+.chart-info {
+  padding: 1.75rem 0;
+}
+
+.chart-data h2 {
+  color: #ea3333;
+  font-size: 1.65rem;
+  margin: 0 0 0.75rem;
+}
+
+.chart-data p {
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-size: 0.65rem;
+}
+
+.blue {
+  color: #5696ee !important;
+}
+
+.tip {
+  color: #999;
+  font-size: 0.55rem;
+}
+
+.result-list {
+  margin-top: 0.25rem;
+}
+
+  .result-list li::after {
+    left: 0;
+    background-color: #ddd;
+  }
+
+  .result-list li {
+    line-height: 2.25rem;
+  }
+
+    .result-list li span {
+      color: #ea3333;
+      float: right;
+    }
+
+.chart {
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+h5 {
+  margin-top: 30px;
+  font-weight: bold;
+}
+
+  h5:first-child {
+    margin-top: 15px;
+  }

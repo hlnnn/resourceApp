@@ -1,0 +1,32 @@
+﻿.success svg {
+  font-size: 8.75rem;
+}
+
+.success svg, .confirm {
+  margin: 2.5rem 0;
+}
+
+.success p {
+  font-size: 0.9rem;
+  color: #999;
+}
+
+.btn-group {
+  padding: 1.5rem 0;
+}
+
+.confirm, .continue {
+  width: 6rem;
+  margin-top: 0;
+  height: 1.8rem;
+  border: 0 !important;
+}
+
+.continue {
+  background: #7dcbf2;
+}
+
+.confirm {
+  background: #f28a88;
+  border: 1px solid #f28a88;
+}

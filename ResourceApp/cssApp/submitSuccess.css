@@ -1,0 +1,30 @@
+﻿  .success {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .success svg {
+    width: 8.5em !important;
+    height: 8.5em !important;
+  }
+  
+  .button {
+    margin-top: 2.5rem;
+    font-size: 1.2rem;
+  }
+  
+  button {
+    color: #fff !important;
+    margin-top: 0rem;
+    width: 6rem;
+    height: 1.8rem;
+    border: 0px !important;
+  }
+  
+  .check {
+    background: #7dcbf2;
+  }
+  
+  .confirm {
+    background: #f28a88;
+  }

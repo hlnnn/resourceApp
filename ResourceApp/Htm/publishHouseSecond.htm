@@ -1,0 +1,243 @@
+﻿<!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>APP 智屋交易</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="content-type" content="no-cache, must-revalidate" />
+  <meta http-equiv="expires" content="0" />
+  <meta http-equiv="content-security-policy">
+
+  <link href="../css/mui.min.css" rel="stylesheet" />
+  <link href="../css/my_pullrefresh.css" rel="stylesheet" />
+  <link href="../css/iconfont.css" rel="stylesheet" />
+  <link href="../cssApp/global.css" rel="stylesheet" />
+  <link href="../cssApp/public.css" rel="stylesheet" />
+
+  <!-- HeadEx -->
+  
+<link href="../css/mui.picker.css" rel="stylesheet" />
+<link href="../css/mui.poppicker.css" rel="stylesheet" />
+<link href="../cssApp/publishHouseFirst.css" rel="stylesheet" />
+<link href="../cssApp/publishHouseSecond.css" rel="stylesheet" />
+
+</head>
+<body>
+  <!-- Body -->
+  
+<!-- BodyHeader -->
+
+<header id="header" class="mui-bar mui-bar-nav mui-nav-top">
+  <a class="mui-icon mui-icon-back mui-icon-left-nav mui-pull-left mui-action-back"></a>
+  <h1 class="mui-title" data-bind="text: title"></h1>
+</header>
+
+<!-- BodyFooter -->
+
+<nav class="mui-bar mui-bar-tab">
+  <button type="button" id="btn_next" class="mui-btn mui-btn-danger mui-btn-block zwjy-btn-main btn-style" data-bind="event: { tap: nexTap }">发布房源</button>
+</nav>
+
+<!-- Content -->
+
+<div class="mui-content">
+  <form class="mui-input-group panel">
+    <!--form-group-->
+    <div class="mui-input-row mui-justify" data-bind="visible:　rentSale">
+      <label class="split">住宅类型<span class="required">*</span></label>
+      <ul>
+        <li class="mui-input-row mui-radio">
+          <label>普通住宅</label>
+          <input name="houseType" type="radio" value="普通住宅" data-bind="checked: houseType">
+        </li>
+        <li class="mui-input-row mui-radio">
+          <label>别墅</label>
+          <input name="houseType" type="radio" value="别墅" data-bind="checked: houseType">
+        </li>
+      </ul>
+    </div>
+
+    <div class="mui-input-row mui-justify" data-bind="visible: wantRentVisible">
+      <label class="split">出租方式<span class="required">*</span></label>
+      <ul>
+        <li class="mui-input-row mui-radio">
+          <label>整租</label>
+          <input name="rentType" type="radio" value="整租" data-bind="checked: theType">
+        </li>
+        <li class="mui-input-row mui-radio">
+          <label>合租</label>
+          <input name="rentType" type="radio" value="合租" data-bind="checked: theType">
+        </li>
+      </ul>
+    </div>
+
+    <div class="mui-input-row" data-bind="event: { tap: businessTap }">
+      <label class="split">区域<span class="required">*</span></label>
+      <a href="javascript:;" class="mui-navigate-right"></a>
+      <input type="text" data-bind="value: businessName" readonly name="businessName" class="mui-input-clear" placeholder="选择小区所在区域" />
+    </div>
+
+    <div class="mui-input-row" data-bind="event: {　tap: communityShow }">
+      <label class="split">小区名称<span class="required">*</span></label>
+      <a class="mui-navigate-right"></a>
+      <input type="text" name="communityName" data-bind="value: communityName" readonly placeholder="输入小区名称">
+    </div>
+
+    <div class="mui-input-row" data-bind="visible: wantVisible" id="blockNo">
+      <label class="split">楼栋号<span class="required">*</span></label>
+      <span class="mui-icon iconfont icon-prompt icon-external unit zwjy-main">不对外显示</span>
+      <input type="text" placeholder="请输入楼栋号" name="building-no" data-bind="value: blockNo" />
+    </div>
+
+    <div class="mui-input-row" data-bind="event: {　tap: huXingTap }">
+      <label class="split">户型<span class="required">*</span></label>
+      <a href="javascript:;" class="mui-navigate-right"></a>
+      <input type="text" name="huxing" data-bind="value: huxing" readonly placeholder="请选择户型" />
+    </div>
+
+    <div class="mui-input-row" id="floor">
+      <label class="split">楼层<span class="required">*</span></label>
+      <a href="javascript:;" class="mui-navigate-right"></a>
+      <input type="text" name="totalFloor" readonly="readonly" data-bind="value: floor" placeholder="请选择楼层" />
+    </div>
+    <div class="mui-input-row" data-bind="event: { tap: orientationTap }">
+      <label class="split">朝向<span class="selectable"></span></label>
+      <a class="mui-navigate-right" href="javascript:;"></a>
+      <input type="text" name="orientation" id="orientation" readonly data-bind="textInput: orientation" placeholder="请选择朝向" />
+    </div>
+    <div class="mui-input-row three-row">
+      <label class="split">面积<span class="required">*</span></label>
+      <span class="unit zwjy-main">㎡</span>
+      <input type="number" name="square" id="square" data-bind="textInput: square" placeholder="请输入面积" />
+    </div>
+    <div data-bind="visible: wantVisible">
+      <div class="mui-input-row three-row" data-bind="visible: houseTypeShow()">
+        <label class="split">占地面积<span class="selectable"></span></label>
+        <span class="unit zwjy-main">㎡</span>
+        <input type="number" name="coverSquare" id="coverSquare" data-bind="value: coverSquare" placeholder="请输入面积" />
+      </div>
+      <div class="mui-input-row three-row" id="garden" data-bind="visible: houseTypeShow() ">
+        <label class="split">花园面积<span class="selectable"></span></label>
+        <span class="unit zwjy-main">㎡</span>
+        <input type="number" name="gardenSquare" id="gardenSquare" data-bind="textInput: gardenSquare" placeholder="请输入面积" />
+      </div>
+    </div>
+    <div class="mui-input-row three-row" data-bind="visible: saleVisible">
+      <label class="split">售价<span class="required">*</span></label>
+      <span class="unit zwjy-main">万</span>
+      <input type="number" name="totalPrice" id="totalPrice" data-bind="textInput: totalPrice" placeholder="请输入您希望售价" />
+    </div>
+
+    <div class="mui-input-row bortop borbottom" data-bind="event: { tap: payWayTap },visible: rentVisible">
+      <label class="split">交纳方式<span class="required">*</span></label>
+      <a href="javascript:;" class="mui-navigate-right"></a>
+      <input type="text" data-bind="value: rentType" readonly name="rentType" class="mui-input-clear" placeholder="选择小区所在区域" />
+    </div>
+    <div class="mui-input-row three-row" data-bind="visible: wantRentVisible">
+      <label class="split">租金<span class="required">*</span></label>
+      <span class="unit zwjy-main">元/月</span>
+      <input type="number" name="rent" data-bind="textInput: rent" placeholder="请输入您希望售价" />
+    </div>
+
+    <div class="mui-input-row" data-bind="event: { tap: finishDegreeTap }">
+      <label class="split" data-bin="text: finishDegreeText">装修程度<span class="required">*</span></label>
+      <a href="javascript:;" class="mui-navigate-right"></a>
+      <input type="text" name="finishDegree" id="finishDegree" readonly data-bind="textInput: finishDegree" placeholder="请选择装修程度" />
+    </div>
+    <div class="mui-input-row" data-bind="event: {tap: function(){ publishMultipleChoice('facility') } }">
+      <label class="split">配套设施<span class="required">*</span></label>
+      <a class="mui-navigate-right"></a>
+      <input type="text" name="facility" id="facility" data-bind="textInput: facilities" class="mui-ellipsis" readonly placeholder="请选择配套设施" />
+    </div>
+    <div class="mui-input-row" data-bind="event: {tap: function(){ publishMultipleChoice('feature') }}">
+      <label class="split">房源特色<span class="required">*</span></label>
+      <a class="mui-navigate-right"></a>
+      <input type="text" name="feature" id="feature" class="mui-ellipsis" readonly data-bind="value: features" placeholder="请选择房源特色" />
+    </div>
+
+    <div class="mui-input-row">
+      <label class="split">标题<span class="selectable"></span></label>
+      <input type="text" name="theTitle" id="theTitle" data-bind="value: theTitle" placeholder="请输入标题" />
+    </div>
+    <div class="mui-input-row textarea-row">
+      <label class="split">描述<span class="required">*</span></label>
+      <textarea id="description" rows="3" placeholder="请输入描述" data-bind="html: description"></textarea>
+    </div>
+    <div data-bind="visible: wantVisible">
+      <div class="mui-input-row" data-bind="event: { tap: buildingTypeTap }">
+        <label class="split">建筑类型</label>
+        <a class="mui-navigate-right" href="javascript:;"></a>
+        <input type="text" name="buildingType" id="buildingType" data-bind="value: buildingType" readonly placeholder="请选择建筑类型" />
+      </div>
+      <div class="mui-input-row" data-bind="event: { tap: propertyTypeTap }">
+        <label class="split">物业类别</label>
+        <a class="mui-navigate-right" href="javascript:;"></a>
+        <input type="text" name="propertyType" id="propertyType" readonly data-bind="value: propertyType" placeholder="请选择建筑物业" />
+      </div>
+      <div class="mui-input-row three-row">
+        <label class="split">物业费</label>
+        <span class="unit zwjy-main">元/平米*月</span>
+        <input type="number" name="propertyFee" id="propertyFee" data-bind="value: propertyFee" placeholder="请输入物业费" />
+      </div>
+
+      <div class="mui-input-row upload-image-container mui-text-center">
+        <img src="" id="myPhoto" style="display: none" />
+        <div class="upload-btn-image">
+          <img id="img-tudi" data-bind="event: { tap: function(){ getPhoto('landImage')} },attr: { src: landImagePath  }">
+          <p class="mui-text-center">点击上传土地证</p>
+        </div>
+        <div class="upload-btn-image">
+          <img id="img-fangchan" data-bind="event: { tap: function(){ getPhoto('houseBuildingImage') }},attr: { src: houseImagePath }" />
+          <p class="mui-text-center">点击上传房产证</p>
+        </div>
+      </div>
+      <div class="mui-input-group" data-bind="visible: myVisible">
+        <div class="image-container">
+          <div class="image-item">
+            <div data-bind="foreach: coverImagePathArr">
+              <img id="houseImageList" class="img-cover" data-bind="attr: { src: $data  }"/>
+            </div>
+            <div class="icon-addImg">
+              <i class="mui-icon iconfont icon-newly-added" data-bind="event: { tap: function(){ getPhoto('coverImagePath') } }"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+  <!-- Script -->
+  <script src="../js/jquery-3.1.0.min.js"></script>
+  <script src="../js/mui.min.js"></script>
+  <script src="../js/mui.pullToRefresh.js"></script>
+  <script src="../js/mui.pullToRefresh.material.js"></script>
+  <script src="../js/knockout-3.4.0.js"></script>
+  <script src="../js/underscore.min.js"></script>
+  <script src="../js/underscore.string.min.js"></script>
+  <script src="../js/zwjy.config.js"></script>
+  <script src="../js/zwjy.js"></script>
+  <script src="../js/zwjy.pullRefresh.js"></script>
+  <script src="../js/zwjy.auth.js"></script>
+  <script src="../js/iconfont.js"></script>
+  
+<script src="../js/mui.picker.js"></script>
+<script src="../js/mui.poppicker.js"></script>
+<script src="../js/zwjy.photo.js"></script>
+<script src="../jsApp/modules/publishHouseSecond.js"></script>
+
+
+<!-- Visual Studio Browser Link -->
+<script type="application/json" id="__browserLink_initializationData">
+    {"appName":"Unknown"}
+</script>
+<script type="text/javascript" src="http://localhost:25621/f72f918f769844409f8c4746a388e3e9/browserLink" async="async"></script>
+<!-- End Browser Link -->
+
+</body>
+</html>

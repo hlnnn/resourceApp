@@ -1,0 +1,392 @@
+﻿/*--------- 头部begin ----------*/
+/*html, body, .mui-content {
+  background: #fff;
+}*/
+
+.nav-tab {
+    padding-top: 0.1rem;
+}
+
+.nav-tab, .nav-tab a {
+    height: 42px;
+}
+
+.mui-nav-top {
+  background-color: #ea3333;
+}
+
+  .mui-nav-top a, .mui-nav-top h1 {
+    color: #fff;
+  }
+/*--------- 头部end ----------*/
+
+.red {
+  color: #ea3333;
+}
+/*--------- 条件筛选begin ----------*/
+#filter-section .filter div {
+  padding: 0 5px;
+}
+
+  #filter-section .filter div span {
+    max-width: 3em;
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: -5px;
+  }
+
+  /*myHouseList*/
+  #filter-section .filter div .max-width {
+    max-width: 5em;
+  }
+
+.filter {
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+  .filter i {
+    padding-left: 0.25rem;
+    font-size: 0.25rem;
+  }
+
+  .filter .active {
+    color: #ea3333;
+  }
+
+.dropdown-wrap {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+  border-bottom: 1px solid #333;
+  padding-bottom: 15px;
+}
+
+.mui-input-group .mui-input-row:after {
+  left: 0;
+}
+
+/*.dropdown-wrap label {
+    display: block;
+    width: 100%;
+  }*/
+
+.dropdown-list, .dropdown-list ul, .dropdown-list ul li {
+  padding: 0;
+  font-size: 14px;
+}
+
+#dropdown-area ul li {
+  padding-left: 0.4rem;
+}
+
+.dropdown-list ul li {
+  line-height: 42px;
+}
+
+#dropdown-area div {
+  height: 15rem;
+  overflow-y: auto;
+}
+
+.dropdown-area ul:not(:first-child) li:after {
+  border-bottom: 1px solid #d3d3d3;
+  left: 0;
+}
+
+.dropdown-area ul:after, .dropdown-area ul li:after {
+  background-color: transparent;
+}
+
+.dropdown-checked ul {
+  padding: 0.3rem 0 0;
+}
+
+  .dropdown-checked ul li, .dropdown-checked ul li a {
+    padding-right: 0 !important;
+  }
+
+    .dropdown-checked ul li, .dropdown-checked ul li a, .modify-price, .modal ul li {
+      height: 1.75rem;
+      line-height: 1.75rem;
+    }
+
+.dropdown-checked .mui-table-view-cell > a:not(.mui-btn), .modify-price {
+  margin: 0;
+  padding: 0 0.5rem;
+}
+
+.btn-confirm {
+  background-color: #ea3333;
+  color: #fff;
+  width: 2.25rem;
+  height: 1.15rem;
+  line-height: 1.15rem;
+  padding: 0;
+  border-radius: 0;
+  border: none;
+  margin-top: 0.3rem;
+  margin-bottom: 20px;
+}
+
+/*.dropdown-checked .mui-table-view-cell>a:after {
+  display: none;
+}*/
+
+.dropdown-checked li:after {
+  left: 0;
+}
+
+.dropdown-checked .mui-selected a {
+  color: #ea3333;
+}
+
+.mui-checkbox input[type=checkbox]:before,
+.mui-radio input[type=radio]:before {
+  content: '';
+}
+
+.mui-checkbox input[type=checkbox]:checked:before,
+.mui-radio input[type=radio]:checked:before {
+  content: '\e472';
+}
+
+.mui-checkbox input[type=checkbox]:checked + label,
+.mui-radio input[type=radio]:checked + label {
+  color: #ea3333 !important;
+}
+
+#dropdown-more .mui-input-group:before, #dropdown-more .mui-input-group .mui-input-row:after {
+  background-color: transparent;
+}
+
+#dropdown-more .group-block div {
+  display: inline-block;
+}
+
+#dropdown-more > div {
+  padding: 0 0.75rem;
+  /*margin-bottom: 2.2rem;*/
+}
+
+#dropdown-more h4 {
+  font-size: 0.7rem;
+  border-bottom: 1px solid #666;
+  padding-bottom: 0.25rem;
+  margin: 0.75rem 0;
+}
+
+#dropdown-more .group-block div label {
+  margin: 0 1.5rem 1rem 0;
+  color: #999;
+  border: 1px solid #999;
+  padding: 0.25rem 0.5rem;
+  display: inline-block;
+  width: auto;
+}
+
+#dropdown-more .mui-checkbox input[type=checkbox]:checked:before, #dropdown-more .mui-radio input[type=radio]:checked:before {
+  color: transparent;
+}
+
+#dropdown-more .mui-checkbox input[type=checkbox]:checked + label,
+#dropdown-more .mui-radio input[type=radio]:checked + label {
+  border: 1px solid #ea3333;
+}
+
+
+#dropdown-more .input-width, .modify-price .input-width {
+  width: 2.625rem;
+  height: 1rem;
+  border-radius: 0;
+  border: 1px solid #9b9b9b;
+  padding: 0 5px;
+  font-size: 14px;
+}
+
+.btn-group button {
+  width: 5.75rem;
+  margin: 7px 0 0;
+}
+/*--------- 条件筛选end ----------*/
+
+/*--------- 搜索框begin ----------*/
+#search-section, .bg-f6 {
+  background-color: #f6f6f6;
+}
+
+#search-section {
+  /*padding: 0.25rem;*/
+  position: relative;
+}
+
+  #search-section > .mui-input-row {
+    overflow: visible;
+  }
+
+  #search-section input, #search-section .mui-placeholder, #search-section .mui-icon-clear {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  #search-section input {
+    background-color: #fff;
+    padding: 0 1.5rem;
+    margin-bottom: 0;
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+  }
+
+  #search-section .mui-placeholder span:before {
+    color: #666;
+  }
+
+  #search-section .mui-placeholder {
+    right: auto;
+    color: #666;
+  }
+
+    #search-section .mui-placeholder span {
+      padding-left: 0.25rem;
+      line-height: 0.75rem;
+    }
+
+  #search-section .mui-icon-clear {
+    top: 0;
+  }
+
+.search-section .mui-active .mui-icon-search {
+  top: 0;
+}
+
+#search-section .mui-active:before {
+  height: 1rem;
+  line-height: 1rem;
+  margin-top: -11px;
+}
+
+.modal {
+  position: absolute;
+  background: #fff;
+  z-index: 999;
+  width: 100%;
+  left: 0;
+  font-size: 0.35rem;
+  top: 2rem;
+  height: 8rem;
+  display: none;
+}
+
+  .modal ul li {
+    padding: 0 15px;
+  }
+/*--------- 搜索框end ----------*/
+
+/*--------- 搜索条数/筛选begin ----------*/
+#screening2 {
+  padding: 0.35rem 0.25rem 0.4rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.6rem;
+}
+
+  #screening2 input {
+    border-radius: 0;
+    border: 1px solid #666;
+    width: 0.5rem;
+    vertical-align: middle;
+    margin-right: 0.25rem;
+  }
+
+.blue {
+  color: #33a5eb;
+}
+
+#screening3 {
+  padding: 0.05rem 0.15rem 0.2rem;
+  margin-bottom: 0.5rem;
+  color: #666;
+  font-size: 0.6rem;
+}
+/*--------- 搜索条数/筛选begin ----------*/
+
+/*--------- 搜索列表/筛选begin ----------*/
+
+
+#house-list {
+  /*top: 8rem;
+  height: 22.5rem;*/
+}
+
+  #house-list li a > img {
+    line-height: 4rem;
+    height: 4rem;
+    width: 5rem;
+    max-width: 5rem;
+    /* margin-top: 0.4rem; */
+  }
+
+   .title {
+    font-size: 0.7rem;
+    margin: 0;
+    font-weight: normal;
+    line-height: 1.1rem;
+  }
+
+  #house-list .subTitle {
+    color: #666;
+    font-size: .5rem;
+  }
+
+  #house-list .features span {
+    border: solid 1px;
+    padding: 0 0.05rem 0.05rem 0.05rem;
+    font-size: 0.5rem;
+    height: 0.7rem;
+    line-height: 0.7rem;
+  }
+
+  #house-list .unitPrice {
+    font-size: 0.6rem;
+    color: #666;
+  }
+
+  #house-list .totalPrice {
+    font-size: 1rem;
+    color: #ea3333;
+    margin: .3rem 0 0 0;
+  }
+
+#collect-list .unitPrice {
+  font-size: 0.6rem;
+  color: #666;
+}
+
+#collect-list .totalPrice {
+  font-size: 1rem;
+  color: #ea3333;
+  margin: .3rem 0 0 0;
+}
+
+.idtag {
+  width: 22px;
+}
+
+.icon-real img {
+  width: 20px;
+  height: auto;
+  position: absolute;
+  top: 11px;
+  left: 15px;
+}
+/*--------- 搜索列表/筛选end ----------*/
+
+/*--------- 底部begin ----------*/
+#nav-footer a.mui-active {
+  color: #ea3333;
+}
+/*--------- 底部end ----------*/

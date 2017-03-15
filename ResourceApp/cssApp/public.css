@@ -1,0 +1,12 @@
+﻿body {
+  font-family: '黑体';
+}
+
+/*头部标题背景颜色*/
+header.mui-bar {
+  background-color: #ea3333;
+}
+
+  header.mui-bar .mui-title, .mui-bar a {
+    color: #ffffff;
+  }
